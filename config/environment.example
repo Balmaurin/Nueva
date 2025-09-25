@@ -1,0 +1,29 @@
+# Variables de entorno para Sheily AI
+# Copia este archivo como .env y configura los valores apropiados
+
+# Base de datos PostgreSQL
+POSTGRES_PASSWORD=tu_password_seguro_aqui
+POSTGRES_DB=sheily_ai_db
+POSTGRES_USER=sheily_ai_user
+
+# Redis
+REDIS_PASSWORD=tu_password_redis_seguro
+
+# Grafana
+GRAFANA_PASSWORD=tu_password_grafana_admin
+
+# JWT Secret (genera uno seguro)
+JWT_SECRET=tu_jwt_secret_muy_seguro_de_al_menos_64_caracteres
+
+# API Keys (configurar según necesidad)
+OPENAI_API_KEY=tu_openai_api_key
+HUGGINGFACE_API_KEY=tu_huggingface_api_key
+SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+
+# Configuración de modelos
+MODEL_PATH=./models
+CUDA_VISIBLE_DEVICES=0
+
+# Configuración de logging
+LOG_LEVEL=info
+NODE_ENV=development

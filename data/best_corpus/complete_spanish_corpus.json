@@ -1,0 +1,83 @@
+{
+  "corpus_name": "Complete Spanish Corpus for NeuroFusion",
+  "version": "1.0.0",
+  "language": "es",
+  "documents": [
+    {
+      "id": "doc_001",
+      "title": "Inteligencia Artificial",
+      "content": "La inteligencia artificial es una rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.",
+      "category": "technology",
+      "keywords": ["IA", "machine learning", "algoritmos", "automatización"]
+    },
+    {
+      "id": "doc_002",
+      "title": "Blockchain y Criptomonedas",
+      "content": "La tecnología blockchain permite crear registros inmutables y descentralizados, siendo la base de las criptomonedas como Bitcoin y Ethereum.",
+      "category": "blockchain",
+      "keywords": ["blockchain", "criptomonedas", "descentralización", "seguridad"]
+    },
+    {
+      "id": "doc_003",
+      "title": "Procesamiento de Lenguaje Natural",
+      "content": "El PLN es una subdisciplina de la IA que se enfoca en la interacción entre computadoras y lenguaje humano natural.",
+      "category": "nlp",
+      "keywords": ["PLN", "texto", "lenguaje", "análisis"]
+    },
+    {
+      "id": "doc_004",
+      "title": "Machine Learning",
+      "content": "El machine learning permite a las computadoras aprender patrones en los datos sin ser programadas explícitamente para cada tarea.",
+      "category": "ml",
+      "keywords": ["aprendizaje", "datos", "patrones", "predicción"]
+    },
+    {
+      "id": "doc_005",
+      "title": "Sistemas de Recomendación",
+      "content": "Los sistemas de recomendación sugieren productos, servicios o contenido basándose en las preferencias y comportamiento del usuario.",
+      "category": "recommendations",
+      "keywords": ["recomendaciones", "usuarios", "preferencias", "personalización"]
+    },
+    {
+      "id": "doc_006",
+      "title": "Análisis de Sentimientos",
+      "content": "El análisis de sentimientos determina la polaridad emocional de un texto, identificando si es positivo, negativo o neutral.",
+      "category": "sentiment",
+      "keywords": ["sentimientos", "emoción", "polaridad", "análisis"]
+    },
+    {
+      "id": "doc_007",
+      "title": "Embeddings y Vectores",
+      "content": "Los embeddings convierten palabras y frases en vectores numéricos que capturan el significado semántico del texto.",
+      "category": "embeddings",
+      "keywords": ["vectores", "semántica", "representación", "numérico"]
+    },
+    {
+      "id": "doc_008",
+      "title": "Transformers y Atención",
+      "content": "Los modelos transformers utilizan mecanismos de atención para procesar secuencias de texto de manera paralela y eficiente.",
+      "category": "transformers",
+      "keywords": ["atención", "secuencias", "paralelo", "eficiencia"]
+    },
+    {
+      "id": "doc_009",
+      "title": "Sistemas de Memoria",
+      "content": "Los sistemas de memoria permiten almacenar y recuperar información de manera eficiente para mejorar el rendimiento.",
+      "category": "memory",
+      "keywords": ["memoria", "almacenamiento", "recuperación", "rendimiento"]
+    },
+    {
+      "id": "doc_010",
+      "title": "Evaluación de Modelos",
+      "content": "La evaluación de modelos es crucial para medir el rendimiento y la calidad de los sistemas de inteligencia artificial.",
+      "category": "evaluation",
+      "keywords": ["evaluación", "métricas", "rendimiento", "calidad"]
+    }
+  ],
+  "metadata": {
+    "total_documents": 10,
+    "categories": ["technology", "blockchain", "nlp", "ml", "recommendations", "sentiment", "embeddings", "transformers", "memory", "evaluation"],
+    "created_date": "2024-08-29",
+    "description": "Corpus completo en español para el sistema NeuroFusion"
+  }
+}

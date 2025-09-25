@@ -1,0 +1,121 @@
+name: Bugbot
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  bugbot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bugbot Auto-Labeler
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const title = context.payload.issue?.title || context.payload.pull_request?.title;
+            const body = context.payload.issue?.body || context.payload.pull_request?.body || '';
+
+            if (!title) return;
+
+            const labels = [];
+
+            // Bug detection
+            if (title.toLowerCase().includes('[bug]') ||
+                title.toLowerCase().includes('bug:') ||
+                body.toLowerCase().includes('error') ||
+                body.toLowerCase().includes('exception')) {
+              labels.push('🐛 bug');
+            }
+
+            // Feature requests
+            if (title.toLowerCase().includes('[feature]') ||
+                title.toLowerCase().includes('feature:') ||
+                body.toLowerCase().includes('would like') ||
+                body.toLowerCase().includes('i want')) {
+              labels.push('✨ enhancement');
+            }
+
+            // Documentation
+            if (title.toLowerCase().includes('[docs]') ||
+                title.toLowerCase().includes('documentation') ||
+                body.toLowerCase().includes('readme') ||
+                body.toLowerCase().includes('docs')) {
+              labels.push('📚 documentation');
+            }
+
+            // Urgent/Critical
+            if (title.toLowerCase().includes('[urgent]') ||
+                title.toLowerCase().includes('[critical]') ||
+                body.toLowerCase().includes('urgent') ||
+                body.toLowerCase().includes('critical')) {
+              labels.push('🚨 critical');
+            }
+
+            // Frontend related
+            if (body.toLowerCase().includes('frontend') ||
+                body.toLowerCase().includes('react') ||
+                body.toLowerCase().includes('next.js') ||
+                body.toLowerCase().includes('ui') ||
+                body.toLowerCase().includes('interface')) {
+              labels.push('🎨 frontend');
+            }
+
+            // Backend related
+            if (body.toLowerCase().includes('backend') ||
+                body.toLowerCase().includes('api') ||
+                body.toLowerCase().includes('server') ||
+                body.toLowerCase().includes('database')) {
+              labels.push('⚙️ backend');
+            }
+
+            // AI/ML related
+            if (body.toLowerCase().includes('ai') ||
+                body.toLowerCase().includes('ml') ||
+                body.toLowerCase().includes('model') ||
+                body.toLowerCase().includes('training')) {
+              labels.push('🤖 ai/ml');
+            }
+
+            // Blockchain related
+            if (body.toLowerCase().includes('blockchain') ||
+                body.toLowerCase().includes('solana') ||
+                body.toLowerCase().includes('token')) {
+              labels.push('⛓️ blockchain');
+            }
+
+            // Add priority based on keywords
+            if (body.toLowerCase().includes('high priority') ||
+                body.toLowerCase().includes('urgent') ||
+                body.toLowerCase().includes('breaking')) {
+              labels.push('🔴 high-priority');
+            } else if (body.toLowerCase().includes('low priority') ||
+                       body.toLowerCase().includes('nice to have')) {
+              labels.push('🟢 low-priority');
+            } else {
+              labels.push('🟡 medium-priority');
+            }
+
+            // Add status labels
+            if (context.payload.action === 'opened') {
+              labels.push('📋 triage-needed');
+            }
+
+            // Apply labels if any found
+            if (labels.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue?.number || context.payload.pull_request?.number,
+                labels: labels
+              });
+
+              // Add a comment explaining the auto-labeling
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue?.number || context.payload.pull_request?.number,
+                body: `🤖 **Bugbot** ha etiquetado automáticamente esta issue con: ${labels.map(l => `\`${l}\``).join(', ')}\n\nSi alguna etiqueta no es correcta, puedes editarla manualmente.`
+              });
+            }

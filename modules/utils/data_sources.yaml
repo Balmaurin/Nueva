@@ -1,0 +1,130 @@
+version: 1.0
+
+# Configuración de fuentes de datos para Sheily-AI
+
+# Política de calidad de datos
+data_quality:
+  min_length: 100
+  max_length: 10000
+  language_filter: ['es', 'en']
+  pii_threshold: 0.5
+  deduplication_threshold: 0.85
+
+# Fuentes de datos por dominio
+domains:
+  # Medicina y Salud
+  "Medicina y Salud":
+    sources:
+      - type: url
+        url: "https://medlineplus.gov/spanish/ency/article/data_dump.zip"
+        license: "Dominio Público"
+        description: "Artículos médicos de MedlinePlus"
+      - type: url
+        url: "https://pubmed.ncbi.nlm.nih.gov/data/medline_dump.tar.gz"
+        license: "Uso académico"
+        description: "Resúmenes de PubMed"
+    preprocessing:
+      - remove_html
+      - normalize_whitespace
+      - detect_language
+      - pii_masking
+
+  # Matemáticas
+  "Matemáticas":
+    sources:
+      - type: url
+        url: "https://arxiv.org/data/math_dump.zip"
+        license: "CC BY-SA 4.0"
+        description: "Papers de matemáticas de arXiv"
+      - type: url
+        url: "https://mathworld.wolfram.com/data_dump.txt"
+        license: "Uso educativo"
+        description: "Enciclopedia de matemáticas de Wolfram"
+    preprocessing:
+      - remove_latex
+      - normalize_equations
+      - detect_language
+
+  # Computación y Programación
+  "Computación y Programación":
+    sources:
+      - type: url
+        url: "https://github.com/collections/programming-books/archive/master.zip"
+        license: "Múltiples licencias"
+        description: "Colección de libros de programación"
+      - type: url
+        url: "https://stackoverflow.com/data_dump/stackoverflow.com-Questions.7z"
+        license: "CC BY-SA 4.0"
+        description: "Preguntas y respuestas de StackOverflow"
+    preprocessing:
+      - remove_code_comments
+      - normalize_whitespace
+      - detect_language
+
+  # Ciencia de Datos e IA
+  "Ciencia de Datos e IA":
+    sources:
+      - type: url
+        url: "https://arxiv.org/data/cs.AI_dump.zip"
+        license: "CC BY-SA 4.0"
+        description: "Papers de IA de arXiv"
+      - type: url
+        url: "https://machinelearningmastery.com/datasets/ml_articles.zip"
+        license: "Uso educativo"
+        description: "Artículos de Machine Learning"
+    preprocessing:
+      - remove_html
+      - normalize_whitespace
+      - detect_language
+
+  # Física
+  "Física":
+    sources:
+      - type: url
+        url: "https://arxiv.org/data/physics_dump.zip"
+        license: "CC BY-SA 4.0"
+        description: "Papers de física de arXiv"
+      - type: url
+        url: "https://www.sciencedirect.com/science/article/physics_dump.zip"
+        license: "Uso académico"
+        description: "Artículos de física de ScienceDirect"
+    preprocessing:
+      - remove_latex
+      - normalize_equations
+      - detect_language
+
+  # Química
+  "Química":
+    sources:
+      - type: url
+        url: "https://pubchem.ncbi.nlm.nih.gov/data_dump.zip"
+        license: "Dominio Público"
+        description: "Datos de PubChem"
+      - type: url
+        url: "https://arxiv.org/data/q-bio.BM_dump.zip"
+        license: "CC BY-SA 4.0"
+        description: "Papers de química biomolecular"
+    preprocessing:
+      - remove_chemical_notation
+      - normalize_whitespace
+      - detect_language
+
+# Configuración de procesamiento global
+global_preprocessing:
+  - remove_urls
+  - remove_email
+  - normalize_unicode
+  - lowercase
+
+# Política de privacidad
+privacy_policy:
+  pii_detection: true
+  anonymization_method: "masking"
+  retention_period_days: 90
+
+# Métricas de calidad
+quality_metrics:
+  - token_count
+  - unique_tokens_ratio
+  - avg_word_length
+  - pos_diversity

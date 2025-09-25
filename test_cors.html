@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test CORS Sheily AI</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #1a1a1a; color: white; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #333; border-radius: 8px; }
+        .success { border-color: #4CAF50; background: rgba(76, 175, 80, 0.1); }
+        .error { border-color: #f44336; background: rgba(244, 67, 54, 0.1); }
+        button { background: #2196F3; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin: 5px; }
+        button:hover { background: #1976D2; }
+        input { padding: 8px; margin: 5px; border: 1px solid #555; border-radius: 4px; background: #333; color: white; }
+        #result { margin-top: 20px; padding: 10px; background: #333; border-radius: 4px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test CORS - Sheily AI Dashboard</h1>
+    
+    <div class="test-section">
+        <h2>1. Test Health API</h2>
+        <button onclick="testHealth()">Probar Health</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. Test CORS Headers</h2>
+        <button onclick="testCORS()">Probar CORS</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. Test Login</h2>
+        <input type="text" id="username" placeholder="Usuario" value="demo">
+        <input type="password" id="password" placeholder="Contraseña" value="demo123">
+        <button onclick="testLogin()">Probar Login</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>4. Test Dashboard Access</h2>
+        <button onclick="openDashboard()">Abrir Dashboard</button>
+    </div>
+    
+    <div id="result"></div>
+
+    <script>
+        const API_BASE = 'http://localhost:8002';
+        
+        function log(message, type = 'info') {
+            const result = document.getElementById('result');
+            const timestamp = new Date().toLocaleTimeString();
+            result.innerHTML += `[${timestamp}] ${message}\n`;
+            console.log(message);
+        }
+        
+        async function testHealth() {
+            try {
+                log('🔍 Probando health endpoint...');
+                const response = await fetch(`${API_BASE}/health`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    log(`✅ Health OK: ${JSON.stringify(data)}`, 'success');
+                } else {
+                    log(`❌ Health falló: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Error health: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testCORS() {
+            try {
+                log('🔍 Probando CORS con OPTIONS...');
+                const response = await fetch(`${API_BASE}/api/auth/login`, {
+                    method: 'OPTIONS',
+                    headers: {
+                        'Origin': 'http://localhost:3000',
+                        'Access-Control-Request-Method': 'POST'
+                    }
+                });
+                
+                log(`✅ CORS Response: ${response.status}`);
+                
+                // Verificar headers CORS
+                const headers = response.headers;
+                const corsHeaders = [
+                    'access-control-allow-origin',
+                    'access-control-allow-methods',
+                    'access-control-allow-credentials'
+                ];
+                
+                corsHeaders.forEach(header => {
+                    if (headers.has(header)) {
+                        log(`   ✅ ${header}: ${headers.get(header)}`);
+                    } else {
+                        log(`   ❌ Falta ${header}`, 'error');
+                    }
+                });
+                
+            } catch (error) {
+                log(`❌ Error CORS: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            try {
+                log(`🔐 Intentando login con ${username}...`);
+                
+                const response = await fetch(`${API_BASE}/api/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Origin': window.location.origin
+                    },
+                    body: JSON.stringify({
+                        identifier: username,
+                        password: password
+                    })
+                });
+                
+                log(`📡 Response status: ${response.status}`);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`✅ Login exitoso: ${data.success}`);
+                    if (data.access_token) {
+                        log(`   ✅ Token generado (${data.access_token.substring(0, 20)}...)`);
+                    }
+                } else {
+                    const errorText = await response.text();
+                    log(`❌ Login falló: ${errorText}`, 'error');
+                }
+                
+            } catch (error) {
+                log(`❌ Error login: ${error.message}`, 'error');
+                if (error.message.includes('CORS')) {
+                    log('🚨 CORS ERROR - El navegador está bloqueando la petición', 'error');
+                }
+            }
+        }
+        
+        function openDashboard() {
+            log('🔗 Abriendo dashboard...');
+            window.open('http://localhost:3000', '_blank');
+        }
+        
+        // Auto-test al cargar
+        window.addEventListener('load', () => {
+            log('🚀 Test CORS cargado. Servidores deben estar corriendo:');
+            log('   📡 API Backend: http://localhost:8002');
+            log('   🌐 Frontend: http://localhost:3000');
+            log('');
+            log('💡 Si hay errores CORS, intenta:');
+            log('   1. Ctrl+F5 para hard refresh');
+            log('   2. Modo incógnito del navegador');
+            log('   3. Desactivar extensiones');
+        });
+    </script>
+</body>
+</html>

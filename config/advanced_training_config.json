@@ -1,0 +1,3774 @@
+{
+  "exercises": [
+    {
+      "id": "comprehension",
+      "title": "Comprensión Lectora Avanzada en IA",
+      "description": "Mejora tu comprensión de conceptos fundamentales de inteligencia artificial y machine learning",
+      "category": "comprension",
+      "difficulty": "medium",
+      "total_questions": 10,
+      "time_limit_minutes": 20,
+      "points_per_question": 10,
+      "questions": [
+        {
+          "id": "comp_1",
+          "question": "¿Cuál es la diferencia principal entre inteligencia artificial débil y fuerte?",
+          "correct_answer": "La IA débil está diseñada para tareas específicas, mientras que la IA fuerte puede realizar cualquier tarea intelectual humana",
+          "explanation": "La IA débil (narrow AI) se especializa en tareas específicas, mientras que la IA fuerte (AGI) busca replicar la inteligencia humana general",
+          "difficulty": "medium",
+          "category": "comprension",
+          "points": 10,
+          "metadata": {
+            "topic": "IA",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comp_2",
+          "question": "¿Qué significa el término 'machine learning' en el contexto de la IA?",
+          "correct_answer": "Es un subconjunto de la IA que permite a las computadoras aprender y mejorar automáticamente sin ser programadas explícitamente",
+          "explanation": "Machine learning es una técnica que permite a los sistemas aprender patrones de datos para hacer predicciones o decisiones",
+          "difficulty": "easy",
+          "category": "comprension",
+          "points": 8,
+          "metadata": {
+            "topic": "ML",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "comp_3",
+          "question": "¿Cuál es el papel de los datos en el aprendizaje automático?",
+          "correct_answer": "Los datos son la base fundamental del aprendizaje automático, ya que los algoritmos aprenden patrones y relaciones de estos datos",
+          "explanation": "Sin datos de calidad, los modelos de ML no pueden aprender efectivamente. Los datos determinan qué puede aprender el modelo",
+          "difficulty": "medium",
+          "category": "comprension",
+          "points": 10,
+          "metadata": {
+            "topic": "datos",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comp_4",
+          "question": "¿Qué es el overfitting en machine learning?",
+          "correct_answer": "Es cuando un modelo aprende demasiado bien los datos de entrenamiento pero no generaliza bien a datos nuevos",
+          "explanation": "El overfitting ocurre cuando el modelo memoriza los datos de entrenamiento en lugar de aprender patrones generalizables",
+          "difficulty": "hard",
+          "category": "comprension",
+          "points": 12,
+          "metadata": {
+            "topic": "overfitting",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "comp_5",
+          "question": "¿Cuál es la diferencia entre aprendizaje supervisado y no supervisado?",
+          "correct_answer": "En aprendizaje supervisado usamos datos etiquetados para entrenar, mientras que en no supervisado no tenemos etiquetas",
+          "explanation": "El aprendizaje supervisado requiere ejemplos con respuestas correctas, mientras que el no supervisado encuentra patrones sin etiquetas",
+          "difficulty": "medium",
+          "category": "comprension",
+          "points": 10,
+          "metadata": {
+            "topic": "tipos_ML",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comp_6",
+          "question": "¿Qué es la validación cruzada en machine learning?",
+          "correct_answer": "Es una técnica para evaluar modelos dividiendo los datos en múltiples subconjuntos y entrenando/validando en diferentes combinaciones",
+          "explanation": "La validación cruzada ayuda a obtener una estimación más robusta del rendimiento del modelo",
+          "difficulty": "hard",
+          "category": "comprension",
+          "points": 12,
+          "metadata": {
+            "topic": "validacion",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "comp_7",
+          "question": "¿Cuál es el propósito de la normalización de datos?",
+          "correct_answer": "Es escalar los datos para que tengan un rango similar, mejorando el rendimiento y convergencia de los algoritmos",
+          "explanation": "La normalización evita que algunas características dominen el entrenamiento debido a sus escalas diferentes",
+          "difficulty": "medium",
+          "category": "comprension",
+          "points": 10,
+          "metadata": {
+            "topic": "preprocesamiento",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comp_8",
+          "question": "¿Qué son las redes neuronales convolucionales (CNN)?",
+          "correct_answer": "Son redes neuronales especializadas en procesar datos con estructura de cuadrícula, como imágenes",
+          "explanation": "Las CNN usan filtros convolucionales para detectar características locales en los datos",
+          "difficulty": "hard",
+          "category": "comprension",
+          "points": 12,
+          "metadata": {
+            "topic": "CNN",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "comp_9",
+          "question": "¿Cuál es la función de activación ReLU?",
+          "correct_answer": "Es una función que devuelve el máximo entre 0 y el valor de entrada: f(x) = max(0, x)",
+          "explanation": "ReLU introduce no-linealidad y ayuda a combatir el problema del gradiente desaparecido",
+          "difficulty": "medium",
+          "category": "comprension",
+          "points": 10,
+          "metadata": {
+            "topic": "activacion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comp_10",
+          "question": "¿Qué es el aprendizaje por refuerzo?",
+          "correct_answer": "Es un tipo de aprendizaje donde un agente aprende a tomar decisiones mediante interacción con un entorno y recibiendo recompensas",
+          "explanation": "El agente aprende qué acciones maximizan las recompensas a largo plazo",
+          "difficulty": "hard",
+          "category": "comprension",
+          "points": 12,
+          "metadata": {
+            "topic": "RL",
+            "complexity": "advanced"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Comprender conceptos fundamentales de IA",
+        "Diferenciar tipos de aprendizaje automático",
+        "Entender problemas comunes en ML"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "AI/ML",
+        "estimated_time": "20 min"
+      }
+    },
+    {
+      "id": "logic",
+      "title": "Lógica Matemática y Razonamiento",
+      "description": "Desarrolla tu capacidad de razonamiento lógico y resolución de problemas matemáticos",
+      "category": "logica",
+      "difficulty": "medium",
+      "total_questions": 10,
+      "time_limit_minutes": 25,
+      "points_per_question": 10,
+      "questions": [
+        {
+          "id": "logic_1",
+          "question": "Si A + B = 15 y A * B = 56, ¿cuáles son los valores de A y B?",
+          "correct_answer": "A = 7, B = 8",
+          "explanation": "Resolviendo el sistema: A + B = 15, A * B = 56. Sustituyendo: A(15-A) = 56 → A² - 15A + 56 = 0 → A = 7 o A = 8",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "algebra",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_2",
+          "question": "¿Cuántos números de 3 dígitos se pueden formar con los dígitos 1, 2, 3, 4, 5 sin repetir?",
+          "correct_answer": "60",
+          "explanation": "P(5,3) = 5!/(5-3)! = 5!/2! = 120/2 = 60",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "permutaciones",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_3",
+          "question": "Si una secuencia sigue el patrón 2, 6, 12, 20, 30, ¿cuál es el siguiente número?",
+          "correct_answer": "42",
+          "explanation": "La diferencia entre términos consecutivos aumenta en 2: +4, +6, +8, +10, +12. Por tanto, 30 + 12 = 42",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "secuencias",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_4",
+          "question": "¿Cuál es la probabilidad de obtener exactamente 2 caras al lanzar una moneda 4 veces?",
+          "correct_answer": "6/16 = 3/8",
+          "explanation": "C(4,2) = 6 formas de obtener 2 caras en 4 lanzamientos. Probabilidad = 6/2⁴ = 6/16 = 3/8",
+          "difficulty": "hard",
+          "category": "logica",
+          "points": 12,
+          "metadata": {
+            "topic": "probabilidad",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "logic_5",
+          "question": "Si f(x) = 2x + 3 y g(x) = x² - 1, ¿cuál es f(g(2))?",
+          "correct_answer": "9",
+          "explanation": "g(2) = 2² - 1 = 4 - 1 = 3. f(g(2)) = f(3) = 2(3) + 3 = 6 + 3 = 9",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "funciones",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_6",
+          "question": "¿Cuál es el área de un círculo inscrito en un cuadrado de lado 6?",
+          "correct_answer": "9π",
+          "explanation": "El diámetro del círculo es igual al lado del cuadrado = 6. Radio = 3. Área = πr² = π(3)² = 9π",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "geometria",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_7",
+          "question": "¿Cuántos divisores tiene el número 36?",
+          "correct_answer": "9",
+          "explanation": "36 = 2² × 3². Número de divisores = (2+1)(2+1) = 3 × 3 = 9",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "divisores",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_8",
+          "question": "Si log₂(x) = 5, ¿cuál es el valor de x?",
+          "correct_answer": "32",
+          "explanation": "log₂(x) = 5 significa que 2⁵ = x. Por tanto, x = 32",
+          "difficulty": "easy",
+          "category": "logica",
+          "points": 8,
+          "metadata": {
+            "topic": "logaritmos",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "logic_9",
+          "question": "¿Cuál es la suma de los primeros 10 números naturales?",
+          "correct_answer": "55",
+          "explanation": "Suma = n(n+1)/2 = 10(11)/2 = 110/2 = 55",
+          "difficulty": "easy",
+          "category": "logica",
+          "points": 8,
+          "metadata": {
+            "topic": "sumas",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "logic_10",
+          "question": "¿Cuál es el valor de la expresión: 2³ × 3² ÷ 6?",
+          "correct_answer": "12",
+          "explanation": "2³ × 3² ÷ 6 = 8 × 9 ÷ 6 = 72 ÷ 6 = 12",
+          "difficulty": "easy",
+          "category": "logica",
+          "points": 8,
+          "metadata": {
+            "topic": "aritmetica",
+            "complexity": "basic"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Mejorar razonamiento lógico",
+        "Desarrollar habilidades matemáticas",
+        "Practicar resolución de problemas"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "Mathematics",
+        "estimated_time": "25 min"
+      }
+    },
+    {
+      "id": "programming",
+      "title": "Programación y Algoritmos",
+      "description": "Desarrolla habilidades de programación y pensamiento algorítmico",
+      "category": "programacion",
+      "difficulty": "medium",
+      "total_questions": 10,
+      "time_limit_minutes": 30,
+      "points_per_question": 10,
+      "questions": [
+        {
+          "id": "prog_1",
+          "question": "¿Cuál es la complejidad temporal del algoritmo de búsqueda binaria?",
+          "correct_answer": "O(log n)",
+          "explanation": "La búsqueda binaria divide el espacio de búsqueda por la mitad en cada iteración, resultando en complejidad logarítmica",
+          "difficulty": "medium",
+          "category": "programacion",
+          "points": 10,
+          "metadata": {
+            "topic": "algoritmos",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "prog_2",
+          "question": "¿Qué es la recursión en programación?",
+          "correct_answer": "Es cuando una función se llama a sí misma para resolver un problema dividiéndolo en subproblemas más pequeños",
+          "explanation": "La recursión es una técnica donde una función se define en términos de sí misma, permitiendo resolver problemas complejos de forma elegante",
+          "difficulty": "medium",
+          "category": "programacion",
+          "points": 10,
+          "metadata": {
+            "topic": "recursion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "prog_3",
+          "question": "¿Cuál es la diferencia entre una pila (stack) y una cola (queue)?",
+          "correct_answer": "Una pila sigue el principio LIFO (último en entrar, primero en salir), mientras que una cola sigue FIFO (primero en entrar, primero en salir)",
+          "explanation": "Las pilas y colas son estructuras de datos lineales con diferentes políticas de acceso a los elementos",
+          "difficulty": "easy",
+          "category": "programacion",
+          "points": 8,
+          "metadata": {
+            "topic": "estructuras_datos",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "prog_4",
+          "question": "¿Qué es la programación orientada a objetos?",
+          "correct_answer": "Es un paradigma de programación que organiza el código en objetos que contienen datos y código para manipular esos datos",
+          "explanation": "La POO permite crear código más modular, reutilizable y fácil de mantener mediante la encapsulación, herencia y polimorfismo",
+          "difficulty": "medium",
+          "category": "programacion",
+          "points": 10,
+          "metadata": {
+            "topic": "POO",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "prog_5",
+          "question": "¿Cuál es la complejidad temporal del algoritmo de ordenamiento burbuja?",
+          "correct_answer": "O(n²)",
+          "explanation": "El ordenamiento burbuja tiene dos bucles anidados, resultando en complejidad cuadrática O(n²)",
+          "difficulty": "easy",
+          "category": "programacion",
+          "points": 8,
+          "metadata": {
+            "topic": "ordenamiento",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "prog_6",
+          "question": "¿Qué es un puntero en programación?",
+          "correct_answer": "Es una variable que almacena la dirección de memoria de otra variable",
+          "explanation": "Los punteros permiten manipular directamente la memoria y crear estructuras de datos dinámicas",
+          "difficulty": "hard",
+          "category": "programacion",
+          "points": 12,
+          "metadata": {
+            "topic": "punteros",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "prog_7",
+          "question": "¿Cuál es la diferencia entre compilación e interpretación?",
+          "correct_answer": "La compilación convierte todo el código fuente a código máquina de una vez, mientras que la interpretación ejecuta el código línea por línea",
+          "explanation": "Los compiladores generan código ejecutable, mientras que los intérpretes ejecutan el código directamente",
+          "difficulty": "medium",
+          "category": "programacion",
+          "points": 10,
+          "metadata": {
+            "topic": "compilacion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "prog_8",
+          "question": "¿Qué es la memoria dinámica?",
+          "correct_answer": "Es memoria que se asigna y libera durante la ejecución del programa, no en tiempo de compilación",
+          "explanation": "La memoria dinámica permite crear estructuras de datos de tamaño variable según las necesidades del programa",
+          "difficulty": "hard",
+          "category": "programacion",
+          "points": 12,
+          "metadata": {
+            "topic": "memoria",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "prog_9",
+          "question": "¿Qué es un algoritmo greedy?",
+          "correct_answer": "Es un algoritmo que toma la mejor decisión local en cada paso, sin considerar las consecuencias futuras",
+          "explanation": "Los algoritmos greedy son simples y rápidos, pero no siempre encuentran la solución óptima global",
+          "difficulty": "medium",
+          "category": "programacion",
+          "points": 10,
+          "metadata": {
+            "topic": "algoritmos",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "prog_10",
+          "question": "¿Cuál es la complejidad espacial de un algoritmo?",
+          "correct_answer": "Es la cantidad de memoria adicional que necesita el algoritmo para ejecutarse, excluyendo la entrada",
+          "explanation": "La complejidad espacial mide cuánta memoria extra requiere el algoritmo durante su ejecución",
+          "difficulty": "medium",
+          "category": "programacion",
+          "points": 10,
+          "metadata": {
+            "topic": "complejidad",
+            "complexity": "intermediate"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Mejorar lógica de programación",
+        "Entender algoritmos básicos",
+        "Practicar resolución de problemas de código"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "Programming",
+        "estimated_time": "30 min"
+      }
+    },
+    {
+      "id": "creativity",
+      "title": "Pensamiento Creativo e Innovación",
+      "description": "Desarrolla tu capacidad de pensamiento creativo y resolución innovadora de problemas",
+      "category": "creatividad",
+      "difficulty": "medium",
+      "total_questions": 10,
+      "time_limit_minutes": 25,
+      "points_per_question": 10,
+      "questions": [
+        {
+          "id": "creat_1",
+          "question": "¿Qué es el pensamiento lateral y cómo se diferencia del pensamiento vertical?",
+          "correct_answer": "El pensamiento lateral busca soluciones creativas explorando múltiples perspectivas, mientras que el vertical sigue un camino lógico secuencial",
+          "explanation": "El pensamiento lateral rompe patrones establecidos para encontrar soluciones innovadoras",
+          "difficulty": "medium",
+          "category": "creatividad",
+          "points": 10,
+          "metadata": {
+            "topic": "pensamiento_lateral",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "creat_2",
+          "question": "¿Cuál es la técnica de lluvia de ideas (brainstorming) y cuáles son sus principios básicos?",
+          "correct_answer": "Es una técnica grupal para generar ideas sin crítica, basada en cantidad, suspensión de juicio, combinación y mejora de ideas",
+          "explanation": "El brainstorming fomenta la generación libre de ideas sin restricciones iniciales",
+          "difficulty": "easy",
+          "category": "creatividad",
+          "points": 8,
+          "metadata": {
+            "topic": "brainstorming",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "creat_3",
+          "question": "¿Qué es la innovación disruptiva y cómo se diferencia de la innovación incremental?",
+          "correct_answer": "La innovación disruptiva crea nuevos mercados o transforma industrias existentes, mientras que la incremental mejora productos existentes",
+          "explanation": "La innovación disruptiva cambia fundamentalmente la forma en que se hacen las cosas",
+          "difficulty": "hard",
+          "category": "creatividad",
+          "points": 12,
+          "metadata": {
+            "topic": "innovacion",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "creat_4",
+          "question": "¿Cuál es el papel de la curiosidad en el proceso creativo?",
+          "correct_answer": "La curiosidad impulsa la exploración, el descubrimiento de nuevas conexiones y la generación de ideas originales",
+          "explanation": "La curiosidad es el motor que nos lleva a cuestionar, explorar y descubrir",
+          "difficulty": "medium",
+          "category": "creatividad",
+          "points": 10,
+          "metadata": {
+            "topic": "curiosidad",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "creat_5",
+          "question": "¿Qué es el design thinking y cuáles son sus fases principales?",
+          "correct_answer": "Es un proceso de resolución de problemas centrado en el usuario, con fases: empatizar, definir, idear, prototipar y testear",
+          "explanation": "El design thinking combina empatía, creatividad y racionalidad para resolver problemas complejos",
+          "difficulty": "medium",
+          "category": "creatividad",
+          "points": 10,
+          "metadata": {
+            "topic": "design_thinking",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "creat_6",
+          "question": "¿Cómo se puede fomentar la creatividad en un entorno de trabajo?",
+          "correct_answer": "Creando espacios seguros para experimentar, diversificando equipos, fomentando la colaboración y reconociendo ideas innovadoras",
+          "explanation": "La creatividad florece en entornos que valoran la diversidad, la experimentación y la colaboración",
+          "difficulty": "medium",
+          "category": "creatividad",
+          "points": 10,
+          "metadata": {
+            "topic": "entorno_creativo",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "creat_7",
+          "question": "¿Qué es la serendipia y cómo puede favorecer la innovación?",
+          "correct_answer": "Es el descubrimiento fortuito de algo valioso mientras se busca otra cosa, que puede llevar a innovaciones inesperadas",
+          "explanation": "La serendipia demuestra la importancia de estar abierto a descubrimientos inesperados",
+          "difficulty": "easy",
+          "category": "creatividad",
+          "points": 8,
+          "metadata": {
+            "topic": "serendipia",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "creat_8",
+          "question": "¿Cuál es la diferencia entre creatividad e innovación?",
+          "correct_answer": "La creatividad es generar ideas originales, mientras que la innovación es implementar esas ideas para crear valor",
+          "explanation": "La creatividad es el primer paso, la innovación es la ejecución exitosa",
+          "difficulty": "medium",
+          "category": "creatividad",
+          "points": 10,
+          "metadata": {
+            "topic": "creatividad_vs_innovacion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "creat_9",
+          "question": "¿Qué son los sesgos cognitivos y cómo afectan la creatividad?",
+          "correct_answer": "Son patrones de pensamiento que pueden limitar la creatividad al favorecer soluciones familiares sobre ideas novedosas",
+          "explanation": "Reconocer y superar los sesgos cognitivos es esencial para el pensamiento creativo",
+          "difficulty": "hard",
+          "category": "creatividad",
+          "points": 12,
+          "metadata": {
+            "topic": "sesgos_cognitivos",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "creat_10",
+          "question": "¿Cómo se puede medir la creatividad de una idea o solución?",
+          "correct_answer": "Evaluando su originalidad, utilidad, fluidez y flexibilidad, considerando tanto aspectos cualitativos como cuantitativos",
+          "explanation": "La medición de la creatividad requiere múltiples dimensiones y perspectivas",
+          "difficulty": "hard",
+          "category": "creatividad",
+          "points": 12,
+          "metadata": {
+            "topic": "medicion_creatividad",
+            "complexity": "advanced"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Mejorar pensamiento divergente",
+        "Desarrollar habilidades de innovación",
+        "Practicar resolución creativa de problemas"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "Creativity",
+        "estimated_time": "25 min"
+      }
+    },
+    {
+      "id": "communication",
+      "title": "Comunicación Efectiva y Persuasión",
+      "description": "Mejora tus habilidades de comunicación, presentación y persuasión",
+      "category": "comunicacion",
+      "difficulty": "medium",
+      "total_questions": 10,
+      "time_limit_minutes": 20,
+      "points_per_question": 10,
+      "questions": [
+        {
+          "id": "comm_1",
+          "question": "¿Cuáles son los elementos clave de la comunicación efectiva?",
+          "correct_answer": "Emisor, mensaje, canal, receptor, retroalimentación y contexto, todos funcionando de manera coherente",
+          "explanation": "La comunicación efectiva requiere que todos los elementos del proceso funcionen en armonía",
+          "difficulty": "easy",
+          "category": "comunicacion",
+          "points": 8,
+          "metadata": {
+            "topic": "elementos_comunicacion",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "comm_2",
+          "question": "¿Qué es la comunicación no verbal y por qué es importante?",
+          "correct_answer": "Son los mensajes transmitidos sin palabras a través de gestos, postura, expresión facial y tono de voz",
+          "explanation": "La comunicación no verbal puede transmitir más información que las palabras mismas",
+          "difficulty": "medium",
+          "category": "comunicacion",
+          "points": 10,
+          "metadata": {
+            "topic": "comunicacion_no_verbal",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comm_3",
+          "question": "¿Cuáles son las técnicas básicas de persuasión según Cialdini?",
+          "correct_answer": "Reciprocidad, compromiso/consistencia, prueba social, autoridad, simpatía y escasez",
+          "explanation": "Estas técnicas se basan en principios psicológicos fundamentales del comportamiento humano",
+          "difficulty": "medium",
+          "category": "comunicacion",
+          "points": 10,
+          "metadata": {
+            "topic": "tecnicas_persuasion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comm_4",
+          "question": "¿Qué es la escucha activa y cómo se practica?",
+          "correct_answer": "Es prestar atención completa al hablante, mostrando interés, haciendo preguntas y evitando interrupciones",
+          "explanation": "La escucha activa mejora la comprensión y fortalece las relaciones",
+          "difficulty": "medium",
+          "category": "comunicacion",
+          "points": 10,
+          "metadata": {
+            "topic": "escucha_activa",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comm_5",
+          "question": "¿Cómo se estructura una presentación efectiva?",
+          "correct_answer": "Con una apertura impactante, desarrollo organizado con puntos clave, y conclusión memorable con llamada a la acción",
+          "explanation": "Una estructura clara ayuda al público a seguir y recordar el mensaje",
+          "difficulty": "medium",
+          "category": "comunicacion",
+          "points": 10,
+          "metadata": {
+            "topic": "estructura_presentacion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comm_6",
+          "question": "¿Qué es el storytelling y por qué es una herramienta poderosa de comunicación?",
+          "correct_answer": "Es el arte de contar historias para conectar emocionalmente con la audiencia y hacer el mensaje más memorable",
+          "explanation": "Las historias activan múltiples áreas del cerebro y crean conexiones emocionales",
+          "difficulty": "medium",
+          "category": "comunicacion",
+          "points": 10,
+          "metadata": {
+            "topic": "storytelling",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comm_7",
+          "question": "¿Cómo se maneja la comunicación en situaciones de conflicto?",
+          "correct_answer": "Manteniendo la calma, escuchando activamente, buscando puntos de acuerdo y enfocándose en soluciones",
+          "explanation": "La comunicación efectiva en conflictos requiere empatía y enfoque en resolver problemas",
+          "difficulty": "hard",
+          "category": "comunicacion",
+          "points": 12,
+          "metadata": {
+            "topic": "comunicacion_conflicto",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "comm_8",
+          "question": "¿Qué es la comunicación asertiva y cómo se diferencia de la agresiva y pasiva?",
+          "correct_answer": "Es expresar opiniones y necesidades de manera respetuosa, equilibrando los propios derechos con los de otros",
+          "explanation": "La asertividad promueve relaciones saludables y resolución efectiva de problemas",
+          "difficulty": "medium",
+          "category": "comunicacion",
+          "points": 10,
+          "metadata": {
+            "topic": "comunicacion_asertiva",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comm_9",
+          "question": "¿Cómo se adapta la comunicación a diferentes audiencias?",
+          "correct_answer": "Analizando las características, necesidades y nivel de conocimiento de la audiencia para ajustar el mensaje",
+          "explanation": "La adaptación del mensaje mejora la comprensión y la conexión con la audiencia",
+          "difficulty": "medium",
+          "category": "comunicacion",
+          "points": 10,
+          "metadata": {
+            "topic": "adaptacion_audiencia",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comm_10",
+          "question": "¿Qué es la retroalimentación constructiva y cómo se proporciona efectivamente?",
+          "correct_answer": "Es información específica, oportuna y útil que ayuda a mejorar el desempeño, enfocándose en comportamientos y resultados",
+          "explanation": "La retroalimentación constructiva debe ser específica, equilibrada y orientada al crecimiento",
+          "difficulty": "hard",
+          "category": "comunicacion",
+          "points": 12,
+          "metadata": {
+            "topic": "retroalimentacion",
+            "complexity": "advanced"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Desarrollar habilidades de comunicación clara",
+        "Mejorar técnicas de persuasión",
+        "Practicar presentaciones efectivas"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "Communication",
+        "estimated_time": "20 min"
+      }
+    },
+    {
+      "id": "critical_thinking",
+      "title": "Pensamiento Crítico y Análisis",
+      "description": "Desarrolla habilidades de pensamiento crítico, análisis lógico y evaluación de argumentos",
+      "category": "pensamiento_critico",
+      "difficulty": "hard",
+      "total_questions": 10,
+      "time_limit_minutes": 30,
+      "points_per_question": 12,
+      "questions": [
+        {
+          "id": "crit_1",
+          "question": "¿Qué es el pensamiento crítico y cuáles son sus componentes principales?",
+          "correct_answer": "Es el proceso de analizar, evaluar y sintetizar información de manera objetiva, incluyendo análisis, evaluación, inferencia y autorregulación",
+          "explanation": "El pensamiento crítico requiere habilidades cognitivas específicas y disposiciones intelectuales",
+          "difficulty": "medium",
+          "category": "pensamiento_critico",
+          "points": 10,
+          "metadata": {
+            "topic": "definicion_pensamiento_critico",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "crit_2",
+          "question": "¿Qué es una falacia lógica y cuáles son los tipos más comunes?",
+          "correct_answer": "Son errores de razonamiento que invalidan un argumento, incluyendo falacias ad hominem, de autoridad, de falsa causa y de generalización apresurada",
+          "explanation": "Reconocer falacias es esencial para evaluar argumentos de manera crítica",
+          "difficulty": "hard",
+          "category": "pensamiento_critico",
+          "points": 12,
+          "metadata": {
+            "topic": "falacias_logicas",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "crit_3",
+          "question": "¿Cómo se evalúa la credibilidad de una fuente de información?",
+          "correct_answer": "Analizando la autoridad del autor, la precisión de la información, la objetividad, la actualidad y la cobertura del tema",
+          "explanation": "La evaluación de fuentes es fundamental en la era de la información digital",
+          "difficulty": "medium",
+          "category": "pensamiento_critico",
+          "points": 10,
+          "metadata": {
+            "topic": "evaluacion_fuentes",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "crit_4",
+          "question": "¿Qué es el sesgo de confirmación y cómo afecta el pensamiento crítico?",
+          "correct_answer": "Es la tendencia a buscar, interpretar y recordar información que confirma las propias creencias, limitando la objetividad",
+          "explanation": "Reconocer y superar el sesgo de confirmación es crucial para el pensamiento crítico",
+          "difficulty": "hard",
+          "category": "pensamiento_critico",
+          "points": 12,
+          "metadata": {
+            "topic": "sesgo_confirmacion",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "crit_5",
+          "question": "¿Cómo se construye un argumento sólido?",
+          "correct_answer": "Con una tesis clara, premisas válidas, evidencia relevante, razonamiento lógico y consideración de contraargumentos",
+          "explanation": "Un argumento sólido requiere estructura lógica y evidencia convincente",
+          "difficulty": "medium",
+          "category": "pensamiento_critico",
+          "points": 10,
+          "metadata": {
+            "topic": "construccion_argumentos",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "crit_6",
+          "question": "¿Qué es la correlación vs causalidad y por qué es importante distinguirlas?",
+          "correct_answer": "La correlación indica relación entre variables, mientras que la causalidad implica que una variable causa cambios en otra",
+          "explanation": "Confundir correlación con causalidad es un error común en el análisis de datos",
+          "difficulty": "hard",
+          "category": "pensamiento_critico",
+          "points": 12,
+          "metadata": {
+            "topic": "correlacion_causalidad",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "crit_7",
+          "question": "¿Cómo se evalúa la calidad de un estudio científico?",
+          "correct_answer": "Analizando la metodología, el tamaño de la muestra, la validez de las medidas, el control de variables y la replicabilidad",
+          "explanation": "La evaluación crítica de estudios científicos requiere conocimiento metodológico",
+          "difficulty": "hard",
+          "category": "pensamiento_critico",
+          "points": 12,
+          "metadata": {
+            "topic": "evaluacion_estudios",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "crit_8",
+          "question": "¿Qué es el razonamiento inductivo vs deductivo?",
+          "correct_answer": "El deductivo va de premisas generales a conclusiones específicas, mientras que el inductivo va de observaciones específicas a generalizaciones",
+          "explanation": "Ambos tipos de razonamiento son importantes pero tienen diferentes fortalezas y limitaciones",
+          "difficulty": "medium",
+          "category": "pensamiento_critico",
+          "points": 10,
+          "metadata": {
+            "topic": "razonamiento_inductivo_deductivo",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "crit_9",
+          "question": "¿Cómo se identifica y evalúa un argumento circular?",
+          "correct_answer": "Un argumento circular usa la conclusión como premisa, creando un razonamiento que no proporciona evidencia real",
+          "explanation": "Los argumentos circulares son falacias que parecen válidas pero no aportan justificación real",
+          "difficulty": "medium",
+          "category": "pensamiento_critico",
+          "points": 10,
+          "metadata": {
+            "topic": "argumento_circular",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "crit_10",
+          "question": "¿Qué es el pensamiento sistémico y cómo se aplica al análisis crítico?",
+          "correct_answer": "Es considerar las interconexiones entre elementos de un sistema, reconociendo que las partes afectan al todo y viceversa",
+          "explanation": "El pensamiento sistémico permite análisis más complejos y holísticos",
+          "difficulty": "hard",
+          "category": "pensamiento_critico",
+          "points": 12,
+          "metadata": {
+            "topic": "pensamiento_sistemico",
+            "complexity": "advanced"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Mejorar capacidad de análisis crítico",
+        "Desarrollar evaluación de argumentos",
+        "Practicar detección de falacias lógicas"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "Critical Thinking",
+        "estimated_time": "30 min"
+      }
+    },
+    {
+      "id": "problem_solving",
+      "title": "Resolución de Problemas Avanzada",
+      "description": "Desarrolla estrategias sistemáticas para resolver problemas complejos de manera efectiva",
+      "category": "resolucion_problemas",
+      "difficulty": "hard",
+      "total_questions": 10,
+      "time_limit_minutes": 35,
+      "points_per_question": 12,
+      "questions": [
+        {
+          "id": "prob_1",
+          "question": "¿Cuáles son las etapas del proceso de resolución de problemas?",
+          "correct_answer": "Definir el problema, analizar causas, generar alternativas, evaluar opciones, implementar solución y verificar resultados",
+          "explanation": "Un proceso sistemático aumenta la probabilidad de encontrar soluciones efectivas",
+          "difficulty": "medium",
+          "category": "resolucion_problemas",
+          "points": 10,
+          "metadata": {
+            "topic": "etapas_resolucion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "prob_2",
+          "question": "¿Qué es el análisis de causa raíz y cómo se aplica?",
+          "correct_answer": "Es identificar la causa fundamental de un problema, no solo los síntomas, usando técnicas como los 5 porqués o diagramas de Ishikawa",
+          "explanation": "El análisis de causa raíz previene que los problemas se repitan",
+          "difficulty": "hard",
+          "category": "resolucion_problemas",
+          "points": 12,
+          "metadata": {
+            "topic": "analisis_causa_raiz",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "prob_3",
+          "question": "¿Cómo se maneja la incertidumbre en la toma de decisiones?",
+          "correct_answer": "Recopilando información adicional, usando análisis de escenarios, evaluando riesgos y preparando planes de contingencia",
+          "explanation": "La incertidumbre requiere enfoques flexibles y preparación para múltiples resultados",
+          "difficulty": "hard",
+          "category": "resolucion_problemas",
+          "points": 12,
+          "metadata": {
+            "topic": "incertidumbre_decisiones",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "prob_4",
+          "question": "¿Qué es el pensamiento divergente y convergente en resolución de problemas?",
+          "correct_answer": "El divergente genera múltiples opciones creativas, mientras que el convergente evalúa y selecciona la mejor solución",
+          "explanation": "Ambos tipos de pensamiento son necesarios en diferentes etapas del proceso",
+          "difficulty": "medium",
+          "category": "resolucion_problemas",
+          "points": 10,
+          "metadata": {
+            "topic": "pensamiento_divergente_convergente",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "prob_5",
+          "question": "¿Cómo se evalúa la efectividad de una solución implementada?",
+          "correct_answer": "Mediante métricas cuantitativas y cualitativas, comparando resultados con objetivos, y monitoreando efectos a largo plazo",
+          "explanation": "La evaluación continua permite ajustes y mejoras en las soluciones",
+          "difficulty": "medium",
+          "category": "resolucion_problemas",
+          "points": 10,
+          "metadata": {
+            "topic": "evaluacion_soluciones",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "prob_6",
+          "question": "¿Qué es el análisis de trade-offs en la toma de decisiones?",
+          "correct_answer": "Es evaluar las ventajas y desventajas de cada opción, considerando múltiples criterios y sus interrelaciones",
+          "explanation": "Los trade-offs son inevitables y requieren análisis cuidadoso de prioridades",
+          "difficulty": "hard",
+          "category": "resolucion_problemas",
+          "points": 12,
+          "metadata": {
+            "topic": "analisis_trade_offs",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "prob_7",
+          "question": "¿Cómo se aplica el pensamiento lateral a la resolución de problemas?",
+          "correct_answer": "Rompiendo patrones establecidos, explorando perspectivas inusuales y buscando soluciones fuera del marco tradicional",
+          "explanation": "El pensamiento lateral puede revelar soluciones innovadoras a problemas complejos",
+          "difficulty": "hard",
+          "category": "resolucion_problemas",
+          "points": 12,
+          "metadata": {
+            "topic": "pensamiento_lateral_problemas",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "prob_8",
+          "question": "¿Qué es la resolución de problemas en equipo y cuáles son sus ventajas?",
+          "correct_answer": "Es abordar problemas colectivamente, aprovechando la diversidad de perspectivas, habilidades y experiencias del equipo",
+          "explanation": "Los equipos pueden generar soluciones más creativas y robustas que individuos trabajando solos",
+          "difficulty": "medium",
+          "category": "resolucion_problemas",
+          "points": 10,
+          "metadata": {
+            "topic": "resolucion_equipo",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "prob_9",
+          "question": "¿Cómo se manejan los problemas complejos con múltiples variables interdependientes?",
+          "correct_answer": "Usando modelado de sistemas, análisis de redes, simulación y enfoques iterativos para manejar la complejidad",
+          "explanation": "Los problemas complejos requieren herramientas y metodologías especializadas",
+          "difficulty": "hard",
+          "category": "resolucion_problemas",
+          "points": 12,
+          "metadata": {
+            "topic": "problemas_complejos",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "prob_10",
+          "question": "¿Qué es la innovación en resolución de problemas y cómo se fomenta?",
+          "correct_answer": "Es encontrar soluciones novedosas y efectivas, fomentada por la creatividad, la experimentación y la apertura a nuevas ideas",
+          "explanation": "La innovación en resolución de problemas puede crear ventajas competitivas significativas",
+          "difficulty": "hard",
+          "category": "resolucion_problemas",
+          "points": 12,
+          "metadata": {
+            "topic": "innovacion_problemas",
+            "complexity": "advanced"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Aplicar metodologías de resolución de problemas",
+        "Desarrollar pensamiento estratégico",
+        "Mejorar toma de decisiones bajo incertidumbre"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "Problem Solving",
+        "estimated_time": "35 min"
+      }
+    },
+    {
+      "id": "data_analysis",
+      "title": "Análisis de Datos y Estadística",
+      "description": "Desarrolla habilidades para analizar datos, interpretar estadísticas y tomar decisiones basadas en evidencia",
+      "category": "analisis_datos",
+      "difficulty": "hard",
+      "total_questions": 10,
+      "time_limit_minutes": 30,
+      "points_per_question": 12,
+      "questions": [
+        {
+          "id": "data_1",
+          "question": "¿Cuál es la diferencia entre estadística descriptiva e inferencial?",
+          "correct_answer": "La descriptiva resume y describe datos existentes, mientras que la inferencial hace predicciones sobre poblaciones basadas en muestras",
+          "explanation": "Ambos tipos son complementarios en el análisis de datos",
+          "difficulty": "medium",
+          "category": "analisis_datos",
+          "points": 10,
+          "metadata": {
+            "topic": "estadistica_descriptiva_inferencial",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "data_2",
+          "question": "¿Qué es la correlación y cómo se interpreta el coeficiente de correlación?",
+          "correct_answer": "La correlación mide la relación lineal entre variables, con valores entre -1 y +1, donde 0 indica ausencia de correlación lineal",
+          "explanation": "La correlación no implica causalidad, solo relación estadística",
+          "difficulty": "medium",
+          "category": "analisis_datos",
+          "points": 10,
+          "metadata": {
+            "topic": "correlacion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "data_3",
+          "question": "¿Qué es el valor p en estadística y cómo se interpreta?",
+          "correct_answer": "Es la probabilidad de obtener resultados al menos tan extremos como los observados, asumiendo que la hipótesis nula es verdadera",
+          "explanation": "Un valor p bajo sugiere evidencia contra la hipótesis nula, pero no prueba causalidad",
+          "difficulty": "hard",
+          "category": "analisis_datos",
+          "points": 12,
+          "metadata": {
+            "topic": "valor_p",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "data_4",
+          "question": "¿Cuál es la diferencia entre media, mediana y moda?",
+          "correct_answer": "La media es el promedio aritmético, la mediana es el valor central ordenado, y la moda es el valor más frecuente",
+          "explanation": "Cada medida de tendencia central tiene diferentes propiedades y usos",
+          "difficulty": "easy",
+          "category": "analisis_datos",
+          "points": 8,
+          "metadata": {
+            "topic": "medidas_tendencia_central",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "data_5",
+          "question": "¿Qué es el sesgo en estadística y cómo afecta el análisis?",
+          "correct_answer": "Es la diferencia sistemática entre el valor esperado de un estimador y el valor verdadero del parámetro",
+          "explanation": "El sesgo puede llevar a conclusiones incorrectas y debe ser considerado en el análisis",
+          "difficulty": "hard",
+          "category": "analisis_datos",
+          "points": 12,
+          "metadata": {
+            "topic": "sesgo_estadistico",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "data_6",
+          "question": "¿Cómo se interpreta un intervalo de confianza?",
+          "correct_answer": "Es un rango de valores que, con cierta probabilidad, contiene el parámetro poblacional verdadero",
+          "explanation": "Los intervalos de confianza proporcionan información sobre la precisión de las estimaciones",
+          "difficulty": "hard",
+          "category": "analisis_datos",
+          "points": 12,
+          "metadata": {
+            "topic": "intervalo_confianza",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "data_7",
+          "question": "¿Qué es la regresión lineal y cuándo se usa?",
+          "correct_answer": "Es un modelo que predice una variable dependiente basada en una o más variables independientes, asumiendo una relación lineal",
+          "explanation": "La regresión lineal es fundamental en análisis predictivo y modelado estadístico",
+          "difficulty": "medium",
+          "category": "analisis_datos",
+          "points": 10,
+          "metadata": {
+            "topic": "regresion_lineal",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "data_8",
+          "question": "¿Cómo se detectan valores atípicos (outliers) en un conjunto de datos?",
+          "correct_answer": "Usando métodos como el rango intercuartílico, puntuaciones z, o análisis visual con gráficos de caja y dispersión",
+          "explanation": "Los valores atípicos pueden indicar errores de datos o fenómenos interesantes",
+          "difficulty": "medium",
+          "category": "analisis_datos",
+          "points": 10,
+          "metadata": {
+            "topic": "valores_atipicos",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "data_9",
+          "question": "¿Qué es el análisis de varianza (ANOVA) y cuándo se aplica?",
+          "correct_answer": "Es una técnica para comparar medias entre múltiples grupos, determinando si las diferencias son estadísticamente significativas",
+          "explanation": "ANOVA es útil cuando se comparan más de dos grupos o tratamientos",
+          "difficulty": "hard",
+          "category": "analisis_datos",
+          "points": 12,
+          "metadata": {
+            "topic": "anova",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "data_10",
+          "question": "¿Cómo se evalúa la calidad de un modelo estadístico?",
+          "correct_answer": "Usando métricas como R², error cuadrático medio, validación cruzada y análisis de residuos",
+          "explanation": "La evaluación de modelos es crucial para asegurar predicciones confiables",
+          "difficulty": "hard",
+          "category": "analisis_datos",
+          "points": 12,
+          "metadata": {
+            "topic": "evaluacion_modelos",
+            "complexity": "advanced"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Comprender conceptos estadísticos fundamentales",
+        "Desarrollar habilidades de análisis de datos",
+        "Mejorar interpretación de resultados estadísticos"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "Data Analysis",
+        "estimated_time": "30 min"
+      }
+    },
+    {
+      "id": "leadership",
+      "title": "Liderazgo y Gestión de Equipos",
+      "description": "Desarrolla habilidades de liderazgo, gestión de equipos y dirección de proyectos",
+      "category": "liderazgo",
+      "difficulty": "hard",
+      "total_questions": 10,
+      "time_limit_minutes": 25,
+      "points_per_question": 12,
+      "questions": [
+        {
+          "id": "lead_1",
+          "question": "¿Cuáles son los estilos de liderazgo principales según la teoría de liderazgo situacional?",
+          "correct_answer": "Directivo, persuasivo, participativo y delegativo, adaptándose según la madurez y competencia del equipo",
+          "explanation": "El liderazgo efectivo requiere adaptar el estilo a las necesidades del equipo y la situación",
+          "difficulty": "medium",
+          "category": "liderazgo",
+          "points": 10,
+          "metadata": {
+            "topic": "estilos_liderazgo",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "lead_2",
+          "question": "¿Qué es la inteligencia emocional en el liderazgo?",
+          "correct_answer": "Es la capacidad de reconocer, entender y gestionar las propias emociones y las de otros para mejorar el rendimiento del equipo",
+          "explanation": "La inteligencia emocional es fundamental para el liderazgo efectivo",
+          "difficulty": "medium",
+          "category": "liderazgo",
+          "points": 10,
+          "metadata": {
+            "topic": "inteligencia_emocional",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "lead_3",
+          "question": "¿Cómo se construye y mantiene la confianza en un equipo?",
+          "correct_answer": "Mediante transparencia, consistencia, competencia, integridad y demostrando preocupación por el bienestar del equipo",
+          "explanation": "La confianza es la base de equipos de alto rendimiento",
+          "difficulty": "medium",
+          "category": "liderazgo",
+          "points": 10,
+          "metadata": {
+            "topic": "construccion_confianza",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "lead_4",
+          "question": "¿Qué es el liderazgo transformacional y cuáles son sus características?",
+          "correct_answer": "Es un estilo que inspira y motiva a los seguidores para superar sus intereses personales en beneficio del grupo",
+          "explanation": "El liderazgo transformacional crea cambios significativos en individuos y organizaciones",
+          "difficulty": "hard",
+          "category": "liderazgo",
+          "points": 12,
+          "metadata": {
+            "topic": "liderazgo_transformacional",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "lead_5",
+          "question": "¿Cómo se maneja el conflicto en equipos de trabajo?",
+          "correct_answer": "Identificando las causas raíz, facilitando comunicación abierta, buscando soluciones colaborativas y estableciendo procesos claros",
+          "explanation": "El conflicto manejado constructivamente puede llevar a innovación y mejora",
+          "difficulty": "hard",
+          "category": "liderazgo",
+          "points": 12,
+          "metadata": {
+            "topic": "manejo_conflictos",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "lead_6",
+          "question": "¿Qué es la delegación efectiva y cómo se practica?",
+          "correct_answer": "Es asignar responsabilidades apropiadas a miembros del equipo, proporcionando autoridad, recursos y retroalimentación",
+          "explanation": "La delegación efectiva desarrolla capacidades del equipo y mejora la productividad",
+          "difficulty": "medium",
+          "category": "liderazgo",
+          "points": 10,
+          "metadata": {
+            "topic": "delegacion_efectiva",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "lead_7",
+          "question": "¿Cómo se motiva a un equipo de trabajo?",
+          "correct_answer": "Reconociendo logros, proporcionando oportunidades de crecimiento, creando un ambiente positivo y alineando objetivos personales con organizacionales",
+          "explanation": "La motivación requiere entender las necesidades individuales y del equipo",
+          "difficulty": "medium",
+          "category": "liderazgo",
+          "points": 10,
+          "metadata": {
+            "topic": "motivacion_equipos",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "lead_8",
+          "question": "¿Qué es el liderazgo servicial y cuáles son sus principios?",
+          "correct_answer": "Es un enfoque donde el líder prioriza las necesidades del equipo y la organización sobre sus propios intereses",
+          "explanation": "El liderazgo servicial crea organizaciones más éticas y sostenibles",
+          "difficulty": "hard",
+          "category": "liderazgo",
+          "points": 12,
+          "metadata": {
+            "topic": "liderazgo_servicial",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "lead_9",
+          "question": "¿Cómo se desarrolla la cultura organizacional?",
+          "correct_answer": "A través de valores compartidos, normas de comportamiento, sistemas de recompensa y liderazgo consistente",
+          "explanation": "La cultura organizacional influye significativamente en el rendimiento y satisfacción",
+          "difficulty": "hard",
+          "category": "liderazgo",
+          "points": 12,
+          "metadata": {
+            "topic": "cultura_organizacional",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "lead_10",
+          "question": "¿Qué es el liderazgo adaptativo y cuándo se requiere?",
+          "correct_answer": "Es la capacidad de cambiar el enfoque de liderazgo según las circunstancias, especialmente en situaciones de cambio o crisis",
+          "explanation": "El liderazgo adaptativo es esencial en entornos dinámicos y complejos",
+          "difficulty": "hard",
+          "category": "liderazgo",
+          "points": 12,
+          "metadata": {
+            "topic": "liderazgo_adaptativo",
+            "complexity": "advanced"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Comprender estilos de liderazgo efectivos",
+        "Desarrollar habilidades de gestión de equipos",
+        "Mejorar comunicación y motivación organizacional"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "Leadership",
+        "estimated_time": "25 min"
+      }
+    },
+    {
+      "id": "innovation",
+      "title": "Innovación y Emprendimiento",
+      "description": "Desarrolla habilidades para crear, implementar y gestionar innovaciones y proyectos emprendedores",
+      "category": "innovacion",
+      "difficulty": "hard",
+      "total_questions": 10,
+      "time_limit_minutes": 30,
+      "points_per_question": 12,
+      "questions": [
+        {
+          "id": "innov_1",
+          "question": "¿Qué es la innovación disruptiva y cómo se diferencia de la incremental?",
+          "correct_answer": "La disruptiva crea nuevos mercados o transforma industrias existentes, mientras que la incremental mejora productos o procesos existentes",
+          "explanation": "La innovación disruptiva cambia fundamentalmente la forma en que se hacen las cosas",
+          "difficulty": "medium",
+          "category": "innovacion",
+          "points": 10,
+          "metadata": {
+            "topic": "innovacion_disruptiva",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "innov_2",
+          "question": "¿Cuáles son las etapas del proceso de innovación?",
+          "correct_answer": "Identificación de oportunidades, generación de ideas, desarrollo de conceptos, prototipado, validación e implementación",
+          "explanation": "Un proceso sistemático aumenta la probabilidad de éxito en la innovación",
+          "difficulty": "medium",
+          "category": "innovacion",
+          "points": 10,
+          "metadata": {
+            "topic": "etapas_innovacion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "innov_3",
+          "question": "¿Qué es el modelo de negocio Canvas y cómo se usa en innovación?",
+          "correct_answer": "Es una herramienta visual para describir, analizar y diseñar modelos de negocio, organizando elementos clave en 9 bloques",
+          "explanation": "El Canvas facilita la visualización y comunicación de modelos de negocio innovadores",
+          "difficulty": "medium",
+          "category": "innovacion",
+          "points": 10,
+          "metadata": {
+            "topic": "modelo_negocio_canvas",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "innov_4",
+          "question": "¿Cómo se valida una idea de innovación antes de invertir recursos significativos?",
+          "correct_answer": "Mediante investigación de mercado, prototipado rápido, pruebas con usuarios reales y análisis de viabilidad técnica y económica",
+          "explanation": "La validación temprana reduce riesgos y mejora las probabilidades de éxito",
+          "difficulty": "hard",
+          "category": "innovacion",
+          "points": 12,
+          "metadata": {
+            "topic": "validacion_ideas",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "innov_5",
+          "question": "¿Qué es el design thinking y cómo se aplica a la innovación?",
+          "correct_answer": "Es un proceso centrado en el usuario que combina empatía, creatividad y racionalidad para resolver problemas complejos",
+          "explanation": "El design thinking es especialmente efectivo para innovaciones centradas en el usuario",
+          "difficulty": "medium",
+          "category": "innovacion",
+          "points": 10,
+          "metadata": {
+            "topic": "design_thinking_innovacion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "innov_6",
+          "question": "¿Cómo se gestiona la propiedad intelectual en proyectos de innovación?",
+          "correct_answer": "Identificando activos intelectuales, protegiendo mediante patentes, marcas y derechos de autor, y desarrollando estrategias de licenciamiento",
+          "explanation": "La gestión adecuada de PI protege y maximiza el valor de las innovaciones",
+          "difficulty": "hard",
+          "category": "innovacion",
+          "points": 12,
+          "metadata": {
+            "topic": "propiedad_intelectual",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "innov_7",
+          "question": "¿Qué es la innovación abierta y cuáles son sus ventajas?",
+          "correct_answer": "Es colaborar con actores externos para desarrollar innovaciones, aprovechando conocimientos y recursos distribuidos",
+          "explanation": "La innovación abierta puede acelerar el desarrollo y reducir costos",
+          "difficulty": "hard",
+          "category": "innovacion",
+          "points": 12,
+          "metadata": {
+            "topic": "innovacion_abierta",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "innov_8",
+          "question": "¿Cómo se mide el éxito de una innovación?",
+          "correct_answer": "Mediante métricas financieras, de adopción, de impacto social y de sostenibilidad, considerando objetivos a corto y largo plazo",
+          "explanation": "La medición del éxito requiere múltiples dimensiones y perspectivas temporales",
+          "difficulty": "hard",
+          "category": "innovacion",
+          "points": 12,
+          "metadata": {
+            "topic": "medicion_innovacion",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "innov_9",
+          "question": "¿Qué es el emprendimiento social y cómo se diferencia del tradicional?",
+          "correct_answer": "Es crear organizaciones que generan valor social y ambiental, además de económico, priorizando el impacto sobre el lucro",
+          "explanation": "El emprendimiento social aborda problemas sociales complejos de manera sostenible",
+          "difficulty": "medium",
+          "category": "innovacion",
+          "points": 10,
+          "metadata": {
+            "topic": "emprendimiento_social",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "innov_10",
+          "question": "¿Cómo se fomenta una cultura de innovación en una organización?",
+          "correct_answer": "Promoviendo la experimentación, tolerando el fracaso, recompensando la creatividad y proporcionando recursos para innovación",
+          "explanation": "Una cultura de innovación requiere cambios sistémicos en valores, procesos y estructuras",
+          "difficulty": "hard",
+          "category": "innovacion",
+          "points": 12,
+          "metadata": {
+            "topic": "cultura_innovacion",
+            "complexity": "advanced"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Comprender procesos de innovación",
+        "Desarrollar mentalidad emprendedora",
+        "Aplicar metodologías de innovación"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "Innovation",
+        "estimated_time": "30 min"
+      }
+    },
+    {
+      "id": "daily_matemáticas_20250829_ebb2f670",
+      "title": "Ejercicio de matemáticas",
+      "description": "Ejercicio de práctica en matemáticas",
+      "category": "matemáticas",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "matemáticas_20250829_ebb2f670_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de matemáticas",
+          "difficulty": "avanzado",
+          "category": "matemáticas",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "matemáticas_20250829_ebb2f670_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de matemáticas?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "matemáticas",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "matemáticas_20250829_ebb2f670_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "matemáticas",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar matemáticas"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "matemáticas",
+          "estadística",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_ciencia_de_datos_e_ia_20250829_72eddf54",
+      "title": "Ejercicio de ciencia_de_datos_e_ia",
+      "description": "Ejercicio de práctica en ciencia_de_datos_e_ia",
+      "category": "ciencia_de_datos_e_ia",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "ciencia_de_datos_e_ia_20250829_72eddf54_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de ciencia_de_datos_e_ia",
+          "difficulty": "avanzado",
+          "category": "ciencia_de_datos_e_ia",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "ciencia_de_datos_e_ia_20250829_72eddf54_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de ciencia_de_datos_e_ia?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "ciencia_de_datos_e_ia",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "ciencia_de_datos_e_ia_20250829_72eddf54_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "ciencia_de_datos_e_ia",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar ciencia_de_datos_e_ia"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "ciencia_de_datos_e_ia",
+          "visualización",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_computación_y_programación_20250829_a24a824d",
+      "title": "Ejercicio de computación_y_programación",
+      "description": "Ejercicio de práctica en computación_y_programación",
+      "category": "computación_y_programación",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "computación_y_programación_20250829_a24a824d_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de computación_y_programación",
+          "difficulty": "avanzado",
+          "category": "computación_y_programación",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "computación_y_programación_20250829_a24a824d_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de computación_y_programación?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "computación_y_programación",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "computación_y_programación_20250829_a24a824d_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "computación_y_programación",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar computación_y_programación"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "computación_y_programación",
+          "optimización",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_geografía_y_geo_política_20250829_89cdeb6e",
+      "title": "Ejercicio de geografía_y_geo_política",
+      "description": "Ejercicio de práctica en geografía_y_geo_política",
+      "category": "geografía_y_geo_política",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "geografía_y_geo_política_20250829_89cdeb6e_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de geografía_y_geo_política",
+          "difficulty": "avanzado",
+          "category": "geografía_y_geo_política",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "geografía_y_geo_política_20250829_89cdeb6e_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de geografía_y_geo_política?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "geografía_y_geo_política",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "geografía_y_geo_política_20250829_89cdeb6e_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "geografía_y_geo_política",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar geografía_y_geo_política"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "geografía_y_geo_política",
+          "cartografía",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_economía_y_finanzas_20250829_f4bf7d68",
+      "title": "Ejercicio de economía_y_finanzas",
+      "description": "Ejercicio de práctica en economía_y_finanzas",
+      "category": "economía_y_finanzas",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "economía_y_finanzas_20250829_f4bf7d68_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de economía_y_finanzas",
+          "difficulty": "avanzado",
+          "category": "economía_y_finanzas",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "economía_y_finanzas_20250829_f4bf7d68_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de economía_y_finanzas?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "economía_y_finanzas",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "economía_y_finanzas_20250829_f4bf7d68_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "economía_y_finanzas",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar economía_y_finanzas"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "economía_y_finanzas",
+          "finanzas_personales",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_juegos_y_entretenimiento_20250829_7f091bd3",
+      "title": "Ejercicio de juegos_y_entretenimiento",
+      "description": "Ejercicio de práctica en juegos_y_entretenimiento",
+      "category": "juegos_y_entretenimiento",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "juegos_y_entretenimiento_20250829_7f091bd3_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de juegos_y_entretenimiento",
+          "difficulty": "avanzado",
+          "category": "juegos_y_entretenimiento",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "juegos_y_entretenimiento_20250829_7f091bd3_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de juegos_y_entretenimiento?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "juegos_y_entretenimiento",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "juegos_y_entretenimiento_20250829_7f091bd3_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "juegos_y_entretenimiento",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar juegos_y_entretenimiento"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "juegos_y_entretenimiento",
+          "entretenimiento_digital",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_arte_música_y_cultura_20250829_a6af7c8f",
+      "title": "Ejercicio de arte_música_y_cultura",
+      "description": "Ejercicio de práctica en arte_música_y_cultura",
+      "category": "arte_música_y_cultura",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "arte_música_y_cultura_20250829_a6af7c8f_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de arte_música_y_cultura",
+          "difficulty": "avanzado",
+          "category": "arte_música_y_cultura",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "arte_música_y_cultura_20250829_a6af7c8f_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de arte_música_y_cultura?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "arte_música_y_cultura",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "arte_música_y_cultura_20250829_a6af7c8f_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "arte_música_y_cultura",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar arte_música_y_cultura"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "arte_música_y_cultura",
+          "crítica_cultural",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_medicina_y_salud_20250829_3cbc9848",
+      "title": "Ejercicio de medicina_y_salud",
+      "description": "Ejercicio de práctica en medicina_y_salud",
+      "category": "medicina_y_salud",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "medicina_y_salud_20250829_3cbc9848_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de medicina_y_salud",
+          "difficulty": "avanzado",
+          "category": "medicina_y_salud",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "medicina_y_salud_20250829_3cbc9848_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de medicina_y_salud?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "medicina_y_salud",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "medicina_y_salud_20250829_3cbc9848_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "medicina_y_salud",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar medicina_y_salud"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "medicina_y_salud",
+          "patología",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_ciencias_de_la_tierra_y_clima_20250829_0fe5c984",
+      "title": "Análisis meteorológico de huracán",
+      "description": "Analiza el fenómeno meteorológico y sus causas",
+      "category": "ciencias_de_la_tierra_y_clima",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "ciencias_de_la_tierra_y_clima_20250829_0fe5c984_q1",
+          "question": "Analiza el fenómeno meteorológico huracán en Caribe",
+          "correct_answer": "Análisis meteorológico:\nTemperatura del mar, humedad, vientos\n\nPatrones: Formación, intensificación, disipación\n\nPredicciones: Modelos numéricos de predicción",
+          "explanation": "Solución del ejercicio de ciencias_de_la_tierra_y_clima",
+          "difficulty": "avanzado",
+          "category": "ciencias_de_la_tierra_y_clima",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "ciencias_de_la_tierra_y_clima_20250829_0fe5c984_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de ciencias_de_la_tierra_y_clima?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "ciencias_de_la_tierra_y_clima",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "ciencias_de_la_tierra_y_clima_20250829_0fe5c984_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "ciencias_de_la_tierra_y_clima",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar ciencias_de_la_tierra_y_clima"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "ciencias_de_la_tierra_y_clima",
+          "meteorología",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_empresa_y_emprendimiento_20250829_f00702de",
+      "title": "Plan estratégico para startup tecnológica",
+      "description": "Desarrolla un plan estratégico para la empresa",
+      "category": "empresa_y_emprendimiento",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "empresa_y_emprendimiento_20250829_f00702de_q1",
+          "question": "Desarrolla un plan estratégico para startup tecnológica en inteligencia artificial",
+          "correct_answer": "Plan estratégico:\nFortalezas, debilidades, oportunidades, amenazas\n\nObjetivos: Crecimiento de mercado, innovación\n\nAcciones: Desarrollo de producto, marketing digital",
+          "explanation": "Solución del ejercicio de empresa_y_emprendimiento",
+          "difficulty": "avanzado",
+          "category": "empresa_y_emprendimiento",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "empresa_y_emprendimiento_20250829_f00702de_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de empresa_y_emprendimiento?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "empresa_y_emprendimiento",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "empresa_y_emprendimiento_20250829_f00702de_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "empresa_y_emprendimiento",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar empresa_y_emprendimiento"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "empresa_y_emprendimiento",
+          "estrategia",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_neurociencia_y_psicología_20250829_af6187f0",
+      "title": "Ejercicio de neurociencia_y_psicología",
+      "description": "Ejercicio de práctica en neurociencia_y_psicología",
+      "category": "neurociencia_y_psicología",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "neurociencia_y_psicología_20250829_af6187f0_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de neurociencia_y_psicología",
+          "difficulty": "avanzado",
+          "category": "neurociencia_y_psicología",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "neurociencia_y_psicología_20250829_af6187f0_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de neurociencia_y_psicología?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "neurociencia_y_psicología",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "neurociencia_y_psicología_20250829_af6187f0_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "neurociencia_y_psicología",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar neurociencia_y_psicología"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "neurociencia_y_psicología",
+          "neuropsicología",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_educación_y_pedagogía_20250829_d5348008",
+      "title": "Ejercicio de educación_y_pedagogía",
+      "description": "Ejercicio de práctica en educación_y_pedagogía",
+      "category": "educación_y_pedagogía",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "educación_y_pedagogía_20250829_d5348008_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de educación_y_pedagogía",
+          "difficulty": "avanzado",
+          "category": "educación_y_pedagogía",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "educación_y_pedagogía_20250829_d5348008_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de educación_y_pedagogía?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "educación_y_pedagogía",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "educación_y_pedagogía_20250829_d5348008_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "educación_y_pedagogía",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar educación_y_pedagogía"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "educación_y_pedagogía",
+          "evaluación_educativa",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_cocina_y_nutrición_20250829_85a8bc18",
+      "title": "Ejercicio de cocina_y_nutrición",
+      "description": "Ejercicio de práctica en cocina_y_nutrición",
+      "category": "cocina_y_nutrición",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "cocina_y_nutrición_20250829_85a8bc18_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de cocina_y_nutrición",
+          "difficulty": "avanzado",
+          "category": "cocina_y_nutrición",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "cocina_y_nutrición_20250829_85a8bc18_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de cocina_y_nutrición?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "cocina_y_nutrición",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "cocina_y_nutrición_20250829_85a8bc18_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "cocina_y_nutrición",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar cocina_y_nutrición"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "cocina_y_nutrición",
+          "cocina_molecular",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_sociología_y_antropología_20250829_3435e7f9",
+      "title": "Ejercicio de sociología_y_antropología",
+      "description": "Ejercicio de práctica en sociología_y_antropología",
+      "category": "sociología_y_antropología",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "sociología_y_antropología_20250829_3435e7f9_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de sociología_y_antropología",
+          "difficulty": "avanzado",
+          "category": "sociología_y_antropología",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "sociología_y_antropología_20250829_3435e7f9_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de sociología_y_antropología?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "sociología_y_antropología",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "sociología_y_antropología_20250829_3435e7f9_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "sociología_y_antropología",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar sociología_y_antropología"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "sociología_y_antropología",
+          "sociología_política",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_lengua_y_lingüística_20250829_f5e80a8e",
+      "title": "Análisis gramatical de oración simple",
+      "description": "Analiza la estructura gramatical del texto proporcionado",
+      "category": "lengua_y_lingüística",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "lengua_y_lingüística_20250829_f5e80a8e_q1",
+          "question": "Analiza gramaticalmente la siguiente oración: El investigador que descubrió la vacuna recibió el premio",
+          "correct_answer": "Análisis:\nAnálisis morfosintáctico completo\n\nCategorías gramaticales: Sustantivo, verbo, adjetivo, determinante",
+          "explanation": "Solución del ejercicio de lengua_y_lingüística",
+          "difficulty": "avanzado",
+          "category": "lengua_y_lingüística",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "lengua_y_lingüística_20250829_f5e80a8e_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de lengua_y_lingüística?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "lengua_y_lingüística",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "lengua_y_lingüística_20250829_f5e80a8e_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "lengua_y_lingüística",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar lengua_y_lingüística"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "lengua_y_lingüística",
+          "gramática",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_hogar_diy_y_reparaciones_20250829_bad665cc",
+      "title": "Ejercicio de hogar_diy_y_reparaciones",
+      "description": "Ejercicio de práctica en hogar_diy_y_reparaciones",
+      "category": "hogar_diy_y_reparaciones",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "hogar_diy_y_reparaciones_20250829_bad665cc_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de hogar_diy_y_reparaciones",
+          "difficulty": "avanzado",
+          "category": "hogar_diy_y_reparaciones",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "hogar_diy_y_reparaciones_20250829_bad665cc_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de hogar_diy_y_reparaciones?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "hogar_diy_y_reparaciones",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "hogar_diy_y_reparaciones_20250829_bad665cc_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "hogar_diy_y_reparaciones",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar hogar_diy_y_reparaciones"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "hogar_diy_y_reparaciones",
+          "jardinería",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_sistemas_devops_redes_20250829_991f8197",
+      "title": "Pipeline de CI/CD para aplicación web",
+      "description": "Diseña un pipeline de integración y despliegue continuo",
+      "category": "sistemas_devops_redes",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "sistemas_devops_redes_20250829_991f8197_q1",
+          "question": "Diseña un pipeline CI/CD para aplicación web con Docker, Kubernetes, Jenkins",
+          "correct_answer": "```yaml\nstages:\n  - build\n  - test\n  - deploy\n```\n\nEtapas: Build, Test, Deploy\n\nHerramientas: Git, Docker, Jenkins, Kubernetes",
+          "explanation": "Solución del ejercicio de sistemas_devops_redes",
+          "difficulty": "avanzado",
+          "category": "sistemas_devops_redes",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "sistemas_devops_redes_20250829_991f8197_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de sistemas_devops_redes?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "sistemas_devops_redes",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "sistemas_devops_redes_20250829_991f8197_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "sistemas_devops_redes",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar sistemas_devops_redes"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "sistemas_devops_redes",
+          "devops",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_historia_20250829_6ea0c208",
+      "title": "Ejercicio de historia",
+      "description": "Ejercicio de práctica en historia",
+      "category": "historia",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "historia_20250829_6ea0c208_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de historia",
+          "difficulty": "avanzado",
+          "category": "historia",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "historia_20250829_6ea0c208_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de historia?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "historia",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "historia_20250829_6ea0c208_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "historia",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar historia"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "historia",
+          "historia_ciencia",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_diseño_y_ux_20250829_260f788c",
+      "title": "Ejercicio de diseño_y_ux",
+      "description": "Ejercicio de práctica en diseño_y_ux",
+      "category": "diseño_y_ux",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "diseño_y_ux_20250829_260f788c_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de diseño_y_ux",
+          "difficulty": "avanzado",
+          "category": "diseño_y_ux",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "diseño_y_ux_20250829_260f788c_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de diseño_y_ux?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "diseño_y_ux",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "diseño_y_ux_20250829_260f788c_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "diseño_y_ux",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar diseño_y_ux"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "diseño_y_ux",
+          "diseño_sostenible",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_ingeniería_20250829_ba3fedcd",
+      "title": "Ejercicio de ingeniería",
+      "description": "Ejercicio de práctica en ingeniería",
+      "category": "ingeniería",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "ingeniería_20250829_ba3fedcd_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de ingeniería",
+          "difficulty": "avanzado",
+          "category": "ingeniería",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "ingeniería_20250829_ba3fedcd_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de ingeniería?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "ingeniería",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "ingeniería_20250829_ba3fedcd_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "ingeniería",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar ingeniería"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "ingeniería",
+          "ingeniería_aeroespacial",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_deportes_y_esports_20250829_e1624962",
+      "title": "Ejercicio de deportes_y_esports",
+      "description": "Ejercicio de práctica en deportes_y_esports",
+      "category": "deportes_y_esports",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "deportes_y_esports_20250829_e1624962_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de deportes_y_esports",
+          "difficulty": "avanzado",
+          "category": "deportes_y_esports",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "deportes_y_esports_20250829_e1624962_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de deportes_y_esports?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "deportes_y_esports",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "deportes_y_esports_20250829_e1624962_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "deportes_y_esports",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar deportes_y_esports"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "deportes_y_esports",
+          "entrenamiento_deportivo",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_química_20250829_61a23e65",
+      "title": "Ejercicio de química",
+      "description": "Ejercicio de práctica en química",
+      "category": "química",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "química_20250829_61a23e65_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de química",
+          "difficulty": "avanzado",
+          "category": "química",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "química_20250829_61a23e65_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de química?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "química",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "química_20250829_61a23e65_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "química",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar química"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "química",
+          "fisicoquímica",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_física_20250829_22b3bc98",
+      "title": "Ejercicio de física",
+      "description": "Ejercicio de práctica en física",
+      "category": "física",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "física_20250829_22b3bc98_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de física",
+          "difficulty": "avanzado",
+          "category": "física",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "física_20250829_22b3bc98_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de física?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "física",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "física_20250829_22b3bc98_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "física",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar física"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "física",
+          "relatividad",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_medios_y_comunicación_20250829_612979fe",
+      "title": "Ejercicio de medios_y_comunicación",
+      "description": "Ejercicio de práctica en medios_y_comunicación",
+      "category": "medios_y_comunicación",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "medios_y_comunicación_20250829_612979fe_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de medios_y_comunicación",
+          "difficulty": "avanzado",
+          "category": "medios_y_comunicación",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "medios_y_comunicación_20250829_612979fe_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de medios_y_comunicación?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "medios_y_comunicación",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "medios_y_comunicación_20250829_612979fe_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "medios_y_comunicación",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar medios_y_comunicación"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "medios_y_comunicación",
+          "publicidad",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_literatura_y_escritura_20250829_c802d5f9",
+      "title": "Ejercicio de literatura_y_escritura",
+      "description": "Ejercicio de práctica en literatura_y_escritura",
+      "category": "literatura_y_escritura",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "literatura_y_escritura_20250829_c802d5f9_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de literatura_y_escritura",
+          "difficulty": "avanzado",
+          "category": "literatura_y_escritura",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "literatura_y_escritura_20250829_c802d5f9_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de literatura_y_escritura?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "literatura_y_escritura",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "literatura_y_escritura_20250829_c802d5f9_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "literatura_y_escritura",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar literatura_y_escritura"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "literatura_y_escritura",
+          "narratología",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_astronomía_y_espacio_20250829_65f08226",
+      "title": "Ejercicio de astronomía_y_espacio",
+      "description": "Ejercicio de práctica en astronomía_y_espacio",
+      "category": "astronomía_y_espacio",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "astronomía_y_espacio_20250829_65f08226_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de astronomía_y_espacio",
+          "difficulty": "avanzado",
+          "category": "astronomía_y_espacio",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "astronomía_y_espacio_20250829_65f08226_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de astronomía_y_espacio?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "astronomía_y_espacio",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "astronomía_y_espacio_20250829_65f08226_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "astronomía_y_espacio",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar astronomía_y_espacio"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "astronomía_y_espacio",
+          "cosmología",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_viajes_e_idiomas_20250829_e3077185",
+      "title": "Ejercicio de viajes_e_idiomas",
+      "description": "Ejercicio de práctica en viajes_e_idiomas",
+      "category": "viajes_e_idiomas",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "viajes_e_idiomas_20250829_e3077185_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de viajes_e_idiomas",
+          "difficulty": "avanzado",
+          "category": "viajes_e_idiomas",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "viajes_e_idiomas_20250829_e3077185_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de viajes_e_idiomas?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "viajes_e_idiomas",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "viajes_e_idiomas_20250829_e3077185_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "viajes_e_idiomas",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar viajes_e_idiomas"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "viajes_e_idiomas",
+          "cultura_viajes",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_ciberseguridad_y_criptografía_20250829_783dbbde",
+      "title": "Ejercicio de ciberseguridad_y_criptografía",
+      "description": "Ejercicio de práctica en ciberseguridad_y_criptografía",
+      "category": "ciberseguridad_y_criptografía",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "ciberseguridad_y_criptografía_20250829_783dbbde_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de ciberseguridad_y_criptografía",
+          "difficulty": "avanzado",
+          "category": "ciberseguridad_y_criptografía",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "ciberseguridad_y_criptografía_20250829_783dbbde_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de ciberseguridad_y_criptografía?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "ciberseguridad_y_criptografía",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "ciberseguridad_y_criptografía_20250829_783dbbde_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "ciberseguridad_y_criptografía",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar ciberseguridad_y_criptografía"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "ciberseguridad_y_criptografía",
+          "seguridad_redes",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_biología_20250829_04f222b5",
+      "title": "Ejercicio de biología",
+      "description": "Ejercicio de práctica en biología",
+      "category": "biología",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "biología_20250829_04f222b5_q1",
+          "question": "Ejercicio de práctica",
+          "correct_answer": "Solución del ejercicio",
+          "explanation": "Solución del ejercicio de biología",
+          "difficulty": "avanzado",
+          "category": "biología",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "biología_20250829_04f222b5_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de biología?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "biología",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "biología_20250829_04f222b5_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "biología",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar biología"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "biología",
+          "biología_celular",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    },
+    {
+      "id": "daily_vida_diaria_legal_práctico_y_trámites_20250829_8c2d7425",
+      "title": "Guía de trámite para DNI",
+      "description": "Crea una guía completa para realizar el trámite",
+      "category": "vida_diaria_legal_práctico_y_trámites",
+      "difficulty": "avanzado",
+      "total_questions": 3,
+      "time_limit_minutes": 35,
+      "points_per_question": 11,
+      "questions": [
+        {
+          "id": "vida_diaria_legal_práctico_y_trámites_20250829_8c2d7425_q1",
+          "question": "Crea una guía para realizar el trámite de DNI",
+          "correct_answer": "Guía de trámite:\nCertificado de nacimiento, fotos\n\nPasos: Solicitud online, cita previa, entrega\n\nPlazos: 15 días hábiles",
+          "explanation": "Solución del ejercicio de vida_diaria_legal_práctico_y_trámites",
+          "difficulty": "avanzado",
+          "category": "vida_diaria_legal_práctico_y_trámites",
+          "points": 17,
+          "metadata": {
+            "hints": [
+              "Lee cuidadosamente el problema",
+              "Divide el problema en pasos más pequeños"
+            ],
+            "type": "main_exercise"
+          }
+        },
+        {
+          "id": "vida_diaria_legal_práctico_y_trámites_20250829_8c2d7425_q2",
+          "question": "¿Cuál es la dificultad de este ejercicio de vida_diaria_legal_práctico_y_trámites?",
+          "correct_answer": "avanzado",
+          "explanation": "La dificultad del ejercicio es avanzado",
+          "difficulty": "easy",
+          "category": "vida_diaria_legal_práctico_y_trámites",
+          "points": 8,
+          "metadata": {
+            "type": "comprehension",
+            "options": [
+              "básico",
+              "intermedio",
+              "avanzado"
+            ]
+          }
+        },
+        {
+          "id": "vida_diaria_legal_práctico_y_trámites_20250829_8c2d7425_q3",
+          "question": "¿Cuánto tiempo estimas que tomará resolver este ejercicio?",
+          "correct_answer": "35 minutos",
+          "explanation": "El tiempo estimado es 35 minutos",
+          "difficulty": "easy",
+          "category": "vida_diaria_legal_práctico_y_trámites",
+          "points": 8,
+          "metadata": {
+            "type": "time_estimation",
+            "options": [
+              "30 minutos",
+              "35 minutos",
+              "40 minutos",
+              "45 minutos"
+            ]
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Practicar vida_diaria_legal_práctico_y_trámites"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "tags": [
+          "vida_diaria_legal_práctico_y_trámites",
+          "trámites_burocráticos",
+          "avanzado"
+        ],
+        "daily_exercise": true
+      }
+    }
+  ]
+}

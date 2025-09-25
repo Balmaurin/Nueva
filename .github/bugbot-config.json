@@ -1,0 +1,77 @@
+{
+  "name": "Bugbot Configuration for Sheily AI",
+  "version": "1.0.0",
+  "description": "Configuración automática de etiquetas y gestión de issues para el proyecto Sheily AI",
+
+  "rules": {
+    "autoLabel": {
+      "enabled": true,
+      "rules": [
+        {
+          "pattern": "\\[BUG\\]|bug:|error|exception|crash",
+          "labels": ["🐛 bug", "🔴 high-priority"],
+          "comment": "Bug detectado automáticamente"
+        },
+        {
+          "pattern": "\\[FEATURE\\]|feature:|enhancement|nueva funcionalidad",
+          "labels": ["✨ enhancement", "🟡 medium-priority"],
+          "comment": "Solicitud de funcionalidad detectada"
+        },
+        {
+          "pattern": "\\[DOCS\\]|documentation|readme|docs",
+          "labels": ["📚 documentation", "🟢 low-priority"],
+          "comment": "Issue de documentación"
+        },
+        {
+          "pattern": "urgent|critical|emergency|breaking",
+          "labels": ["🚨 critical", "🔴 high-priority"],
+          "comment": "Issue crítica detectada"
+        }
+      ]
+    },
+
+    "autoAssign": {
+      "enabled": false,
+      "rules": [
+        {
+          "labels": ["🐛 bug"],
+          "assignees": ["Balmaurin"]
+        },
+        {
+          "labels": ["🎨 frontend"],
+          "assignees": ["Balmaurin"]
+        }
+      ]
+    },
+
+    "autoClose": {
+      "enabled": false,
+      "inactiveDays": 30,
+      "exemptLabels": ["🚨 critical", "🔴 high-priority"]
+    }
+  },
+
+  "components": {
+    "frontend": ["react", "next.js", "ui", "interface", "frontend"],
+    "backend": ["api", "server", "database", "backend"],
+    "ai": ["ai", "ml", "model", "training", "llm"],
+    "blockchain": ["blockchain", "solana", "token", "crypto"]
+  },
+
+  "priorities": {
+    "critical": ["crash", "security", "data loss", "breaking"],
+    "high": ["error", "exception", "urgent", "blocking"],
+    "medium": ["improvement", "feature", "enhancement"],
+    "low": ["docs", "cleanup", "refactor", "nice to have"]
+  },
+
+  "notifications": {
+    "enabled": true,
+    "channels": ["issues", "pull_requests"],
+    "templates": {
+      "bug_labeled": "🐛 Bug etiquetado automáticamente: {labels}",
+      "feature_labeled": "✨ Feature request etiquetada: {labels}",
+      "critical_issue": "🚨 Issue crítica detectada - requiere atención inmediata"
+    }
+  }
+}

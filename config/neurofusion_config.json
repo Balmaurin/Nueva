@@ -1,0 +1,140 @@
+{
+  "system_name": "NeuroFusion Advanced System - Implementación Completa",
+  "version": "3.1.0",
+  "debug_mode": false,
+  "base_path": "./",
+  "data_path": "./data",
+  "models_path": "./models",
+  "cache_path": "./cache",
+  "logs_path": "./logs",
+  "default_embedding_model": "all-MiniLM-L6-v2",
+  "default_llm_model": "models/custom/sheily-personal-model",
+  "max_concurrent_operations": 20,
+  "cache_enabled": true,
+  "cache_size": 15000,
+  "enable_encryption": true,
+  "blockchain_enabled": true,
+  "solana_network": "devnet",
+  "log_level": "INFO",
+  "log_file": "neurofusion_advanced.log",
+  "frontend_port": 3000,
+  "backend_port": 8000,
+  "host": "127.0.0.1",
+  "enable_monitoring": true,
+  "advanced_modules_enabled": true,
+  "components": {
+    "embeddings": {
+      "enabled": true,
+      "model_name": "all-MiniLM-L6-v2",
+      "cache_enabled": true,
+      "cache_size": 10000
+    },
+    "branch_system": {
+      "enabled": true,
+      "branches": [
+        "lengua_y_lingüística",
+        "matemáticas",
+        "computación_y_programación",
+        "medicina_y_salud",
+        "física",
+        "química",
+        "biología",
+        "historia",
+        "geografía_y_geo_política",
+        "economía_y_finanzas",
+        "derecho_y_políticas_públicas",
+        "educación_y_pedagogía",
+        "ingeniería",
+        "empresa_y_emprendimiento",
+        "arte_música_y_cultura",
+        "literatura_y_escritura",
+        "medios_y_comunicación",
+        "deportes_y_esports",
+        "juegos_y_entretenimiento",
+        "cocina_y_nutrición",
+        "hogar_diy_y_reparaciones",
+        "viajes_e_idiomas",
+        "vida_diaria_legal_práctico_y_trámites",
+        "sociología_y_antropología",
+        "neurociencia_y_psicología",
+        "astronomía_y_espacio",
+        "ciencias_de_la_tierra_y_clima",
+        "ciencia_de_datos_e_ia",
+        "ciberseguridad_y_criptografía",
+        "electrónica_y_iot",
+        "sistemas_devops_redes",
+        "diseño_y_ux"
+      ],
+      "micro_branches_enabled": true,
+      "confidence_threshold": 0.7,
+      "micro_branch_training": true,
+      "adaptive_learning": true
+    },
+    "learning": {
+      "enabled": true,
+      "learning_rate": 0.001,
+      "batch_size": 32,
+      "advanced_learning": true
+    },
+    "memory": {
+      "enabled": true,
+      "max_memories": 20000,
+      "memory_decay_rate": 0.05,
+      "consciousness_enabled": true
+    },
+    "evaluator": {
+      "enabled": true,
+      "quality_thresholds": {
+        "similarity": 0.7,
+        "length_ratio": 0.6,
+        "keyword_coverage": 0.8,
+        "coherence": 0.75
+      }
+    },
+    "security": {
+      "jwt_enabled": true,
+      "two_factor_enabled": true,
+      "digital_signature_enabled": true,
+      "advanced_encryption": true,
+      "password_policies": {
+        "min_length": 12,
+        "max_length": 128,
+        "require_uppercase": true,
+        "require_lowercase": true,
+        "require_numbers": true,
+        "require_special_chars": true,
+        "max_failed_login_attempts": 5,
+        "account_lockout_duration_minutes": 30
+      },
+      "rate_limiting": {
+        "enabled": true,
+        "max_requests_per_minute": 200,
+        "burst_limit": 50
+      },
+      "cors_config": {
+        "allowed_origins": ["http://localhost:3000", "https://sheily-ai.com"],
+        "allowed_methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allowed_headers": ["Authorization", "Content-Type", "Accept"]
+      }
+    },
+    "blockchain": {
+      "enabled": true,
+      "solana_network": "devnet",
+      "tokens_enabled": true
+    },
+    "unified_systems": {
+      "enabled": true,
+      "master_system": true,
+      "consolidated_architecture": true
+    }
+  },
+  "performance": {
+    "max_response_time": 3.0,
+    "concurrent_queries": 20,
+    "memory_limit_mb": 4096,
+    "cpu_limit_percent": 90
+  },
+  "implementation_status": "complete",
+  "total_branches": 35,
+  "total_micro_branches": 210
+}

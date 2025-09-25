@@ -1,0 +1,117 @@
+{
+  "total_modules_scanned": 51,
+  "importable_modules": 42,
+  "modules_with_errors": [
+    {
+      "module_name": "secure_key_management",
+      "path": "blockchain/secure_key_management.py",
+      "import_error": "name 'Keypair' is not defined"
+    },
+    {
+      "module_name": "sheily_spl_real",
+      "path": "blockchain/sheily_spl_real.py",
+      "import_error": "name 'Keypair' is not defined"
+    },
+    {
+      "module_name": "core.integration_manager",
+      "path": "core/integration_manager.py",
+      "import_error": "No module named 'modules'"
+    },
+    {
+      "module_name": "core.advanced_system_integrator",
+      "path": "core/advanced_system_integrator.py",
+      "import_error": "No module named 'ai.compatibility_adapter'"
+    },
+    {
+      "module_name": "core.continuous_improvement",
+      "path": "core/continuous_improvement.py",
+      "import_error": "No module named 'branches'"
+    },
+    {
+      "module_name": "core.daily_exercise_integrator",
+      "path": "core/daily_exercise_integrator.py",
+      "import_error": "attempted relative import beyond top-level package"
+    },
+    {
+      "module_name": "enhanced_daily_exercise_integrator",
+      "path": "core/enhanced_daily_exercise_integrator.py",
+      "import_error": "name 'QuestionType' is not defined"
+    },
+    {
+      "module_name": "core.neurofusion_compatibility_validator",
+      "path": "core/neurofusion_compatibility_validator.py",
+      "import_error": "No module named 'ai.neurofusion_unified_core'"
+    },
+    {
+      "module_name": "core.integration.rewards_integration",
+      "path": "core/integration/rewards_integration.py",
+      "import_error": "No module named 'modules'"
+    }
+  ],
+  "syntax_errors": [],
+  "import_errors": [
+    {
+      "module_name": "secure_key_management",
+      "path": "blockchain/secure_key_management.py",
+      "error": "name 'Keypair' is not defined"
+    },
+    {
+      "module_name": "sheily_spl_real",
+      "path": "blockchain/sheily_spl_real.py",
+      "error": "name 'Keypair' is not defined"
+    },
+    {
+      "module_name": "core.integration_manager",
+      "path": "core/integration_manager.py",
+      "error": "No module named 'modules'"
+    },
+    {
+      "module_name": "core.advanced_system_integrator",
+      "path": "core/advanced_system_integrator.py",
+      "error": "No module named 'ai.compatibility_adapter'"
+    },
+    {
+      "module_name": "core.continuous_improvement",
+      "path": "core/continuous_improvement.py",
+      "error": "No module named 'branches'"
+    },
+    {
+      "module_name": "core.daily_exercise_integrator",
+      "path": "core/daily_exercise_integrator.py",
+      "error": "attempted relative import beyond top-level package"
+    },
+    {
+      "module_name": "enhanced_daily_exercise_integrator",
+      "path": "core/enhanced_daily_exercise_integrator.py",
+      "error": "name 'QuestionType' is not defined"
+    },
+    {
+      "module_name": "core.neurofusion_compatibility_validator",
+      "path": "core/neurofusion_compatibility_validator.py",
+      "error": "No module named 'ai.neurofusion_unified_core'"
+    },
+    {
+      "module_name": "core.integration.rewards_integration",
+      "path": "core/integration/rewards_integration.py",
+      "error": "No module named 'modules'"
+    }
+  ],
+  "missing_dependencies": [
+    "modules",
+    "modules",
+    "branches",
+    "modules",
+    "security",
+    "modules",
+    "modules",
+    "modules",
+    "branches",
+    "branches",
+    "branches",
+    "branches",
+    "modules",
+    "modules",
+    "modules",
+    "modules"
+  ]
+}

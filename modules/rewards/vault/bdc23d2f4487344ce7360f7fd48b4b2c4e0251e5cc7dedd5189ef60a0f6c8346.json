@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-08-27T17:24:22.629620+00:00",
+  "session_id": "3f85714d73867c50d9dd8e36efdc08428e45dceb4cce805167c7ef31af149597",
+  "domain": "vida_diaria,_legal_práctico_y_trámites",
+  "sheilys": 7.1,
+  "details": {
+    "timestamp": "2025-08-27T17:24:22.629213",
+    "domain": "vida_diaria,_legal_práctico_y_trámites",
+    "query": "¿Cuáles son los documentos necesarios para tramitar un pasaporte?",
+    "response": "Para tramitar un pasaporte, necesitas presentar tu documento de identidad, comprobante de domicilio, y fotografías recientes.",
+    "quality_score": 0.6499999999999999,
+    "tokens_used": 25,
+    "session_id": "3f85714d73867c50d9dd8e36efdc08428e45dceb4cce805167c7ef31af149597"
+  },
+  "reward_id": "bdc23d2f4487344ce7360f7fd48b4b2c4e0251e5cc7dedd5189ef60a0f6c8346"
+}

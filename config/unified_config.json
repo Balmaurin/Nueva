@@ -1,0 +1,181 @@
+{
+  "system_name": "Sheily AI - Sistema Unificado",
+  "version": "3.1.0",
+  "environment": "production",
+  "debug_mode": false,
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8000,
+    "frontend_port": 3000,
+    "ssl_enabled": false,
+    "cors_origins": [
+      "http://localhost:3000",
+      "https://sheily-ai.com"
+    ]
+  },
+  "database": {
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "name": "sheily_ai_db",
+    "user": "sheily_ai_user",
+    "pool_size": 20,
+    "timeout": 30000,
+    "ssl": false
+  },
+  "redis": {
+    "host": "localhost",
+    "port": 6379,
+    "db": 0,
+    "timeout": 5000,
+    "retry_delay": 100
+  },
+  "security": {
+    "jwt": {
+      "algorithm": "HS256",
+      "expiration": 3600,
+      "refresh_expiration": 86400
+    },
+    "bcrypt": {
+      "rounds": 12
+    },
+    "rate_limiting": {
+      "window_ms": 900000,
+      "max_requests": 100,
+      "burst_limit": 50
+    },
+    "password_policy": {
+      "min_length": 12,
+      "max_length": 128,
+      "require_uppercase": true,
+      "require_lowercase": true,
+      "require_numbers": true,
+      "require_special_chars": true,
+      "max_failed_attempts": 5,
+      "lockout_duration_minutes": 30
+    }
+  },
+  "ai_models": {
+    "llm": {
+      "server_url": "http://localhost:8005",
+      "model_name": "Llama-3.2-3B-Instruct-Q8_0",
+      "timeout": 60,
+      "max_retries": 3,
+      "temperature": 0.7,
+      "max_tokens": 2048
+    },
+    "embeddings": {
+      "model_name": "all-MiniLM-L6-v2",
+      "dimension": 384,
+      "cache_enabled": true,
+      "cache_size": 10000
+    }
+  },
+  "branches": {
+    "total_branches": 35,
+    "enabled": true,
+    "confidence_threshold": 0.7,
+    "micro_branches_enabled": true,
+    "adaptive_learning": true,
+    "list": [
+      "lengua_y_lingüística",
+      "matemáticas",
+      "computación_y_programación",
+      "medicina_y_salud",
+      "física",
+      "química",
+      "biología",
+      "historia",
+      "geografía_y_geo_política",
+      "economía_y_finanzas",
+      "derecho_y_políticas_públicas",
+      "educación_y_pedagogía",
+      "ingeniería",
+      "empresa_y_emprendimiento",
+      "arte_música_y_cultura",
+      "literatura_y_escritura",
+      "medios_y_comunicación",
+      "deportes_y_esports",
+      "juegos_y_entretenimiento",
+      "cocina_y_nutrición",
+      "hogar_diy_y_reparaciones",
+      "viajes_e_idiomas",
+      "vida_diaria_legal_práctico_y_trámites",
+      "sociología_y_antropología",
+      "neurociencia_y_psicología",
+      "astronomía_y_espacio",
+      "ciencias_de_la_tierra_y_clima",
+      "ciencia_de_datos_e_ia",
+      "ciberseguridad_y_criptografía",
+      "electrónica_y_iot",
+      "sistemas_devops_redes",
+      "diseño_y_ux",
+      "general",
+      "maestros_de_los_números",
+      "sanadores_del_cuerpo_y_alma"
+    ]
+  },
+  "training": {
+    "enabled": true,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "max_epochs": 100,
+    "early_stopping": true,
+    "validation_split": 0.2,
+    "tokens_per_exercise": 10,
+    "reward_multiplier": 1.5
+  },
+  "memory": {
+    "enabled": true,
+    "max_memories": 20000,
+    "decay_rate": 0.05,
+    "consciousness_enabled": true,
+    "types": [
+      "episodic",
+      "semantic",
+      "short_term",
+      "long_term"
+    ]
+  },
+  "monitoring": {
+    "enabled": true,
+    "log_level": "INFO",
+    "log_file": "sheily_ai.log",
+    "metrics_enabled": true,
+    "alerts_enabled": true,
+    "backup_enabled": true,
+    "backup_interval": 43200000,
+    "max_backups": 10
+  },
+  "cache": {
+    "enabled": true,
+    "size": 15000,
+    "ttl": 300000,
+    "type": "redis"
+  },
+  "blockchain": {
+    "enabled": true,
+    "network": "devnet",
+    "tokens_enabled": true,
+    "rpc_url": "https://api.devnet.solana.com"
+  },
+  "email": {
+    "enabled": false,
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "from": "noreply@sheily-ai.com"
+  },
+  "paths": {
+    "data": "./data",
+    "models": "./models",
+    "cache": "./cache",
+    "logs": "./logs",
+    "backups": "./backups"
+  },
+  "performance": {
+    "max_response_time": 3.0,
+    "concurrent_queries": 20,
+    "memory_limit_mb": 4096,
+    "cpu_limit_percent": 90
+  }
+}

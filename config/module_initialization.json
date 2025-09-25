@@ -1,0 +1,154 @@
+{
+  "module_initialization": {
+    "version": "1.0.0",
+    "description": "Configuración de inicialización de módulos del sistema Sheily AI",
+    "core_modules": {
+      "neurofusion_core": {
+        "enabled": true,
+        "priority": 1,
+        "dependencies": [],
+        "config": {
+          "max_memory_mb": 1024,
+          "timeout_seconds": 30
+        }
+      },
+      "integration_manager": {
+        "enabled": true,
+        "priority": 2,
+        "dependencies": ["neurofusion_core"],
+        "config": {
+          "max_concurrent_queries": 10,
+          "cache_enabled": true
+        }
+      },
+      "unified_systems": {
+        "enabled": true,
+        "priority": 3,
+        "dependencies": ["neurofusion_core", "integration_manager"],
+        "config": {
+          "auto_initialize": true,
+          "failsafe_mode": true
+        }
+      }
+    },
+    "ai_modules": {
+      "advanced_ai_system": {
+        "enabled": true,
+        "priority": 4,
+        "dependencies": ["unified_systems"],
+        "config": {
+          "model_path": "models/",
+          "max_tokens": 2048,
+          "temperature": 0.7
+        }
+      },
+      "llm_client": {
+        "enabled": true,
+        "priority": 5,
+        "dependencies": ["advanced_ai_system"],
+        "config": {
+          "server_url": "http://localhost:8005",
+          "timeout": 60,
+          "retry_attempts": 3
+        }
+      }
+    },
+    "data_modules": {
+      "knowledge_base": {
+        "enabled": true,
+        "priority": 2,
+        "dependencies": [],
+        "config": {
+          "database_path": "data/knowledge_base.db",
+          "auto_backup": true,
+          "max_entries": 10000
+        }
+      },
+      "embeddings": {
+        "enabled": true,
+        "priority": 3,
+        "dependencies": ["knowledge_base"],
+        "config": {
+          "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "cache_enabled": true,
+          "batch_size": 32
+        }
+      }
+    },
+    "security_modules": {
+      "access_control": {
+        "enabled": true,
+        "priority": 1,
+        "dependencies": [],
+        "config": {
+          "jwt_enabled": true,
+          "session_timeout": 3600,
+          "max_failed_attempts": 5
+        }
+      },
+      "encryption": {
+        "enabled": true,
+        "priority": 1,
+        "dependencies": [],
+        "config": {
+          "algorithm": "AES-256",
+          "key_rotation_days": 30
+        }
+      }
+    },
+    "blockchain_modules": {
+      "solana_integration": {
+        "enabled": false,
+        "priority": 10,
+        "dependencies": ["security_modules"],
+        "config": {
+          "network": "devnet",
+          "rpc_url": "https://api.devnet.solana.com",
+          "wallet_enabled": false
+        }
+      },
+      "token_system": {
+        "enabled": true,
+        "priority": 9,
+        "dependencies": [],
+        "config": {
+          "initial_balance": 1000,
+          "reward_multiplier": 1.0,
+          "max_daily_rewards": 100
+        }
+      }
+    }
+  },
+  "initialization_settings": {
+    "parallel_loading": true,
+    "max_parallel_modules": 5,
+    "timeout_per_module": 30,
+    "retry_failed_modules": true,
+    "max_retries": 3,
+    "failsafe_mode": true,
+    "logging_level": "INFO",
+    "performance_monitoring": true
+  },
+  "health_checks": {
+    "enabled": true,
+    "interval_seconds": 60,
+    "modules_to_check": [
+      "neurofusion_core",
+      "integration_manager", 
+      "knowledge_base",
+      "llm_client"
+    ],
+    "auto_restart_failed": true,
+    "max_restart_attempts": 3
+  },
+  "resource_limits": {
+    "max_memory_mb": 4096,
+    "max_cpu_percent": 80,
+    "max_disk_mb": 10240,
+    "warning_thresholds": {
+      "memory_percent": 75,
+      "cpu_percent": 70,
+      "disk_percent": 80
+    }
+  }
+}

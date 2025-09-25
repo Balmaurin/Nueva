@@ -1,0 +1,23 @@
+[
+  {
+    "alert_type": "high_cpu",
+    "threshold": 3,
+    "time_window_minutes": 30,
+    "escalation_level": 1,
+    "action": "notify_admin"
+  },
+  {
+    "alert_type": "high_memory",
+    "threshold": 2,
+    "time_window_minutes": 15,
+    "escalation_level": 2,
+    "action": "notify_team"
+  },
+  {
+    "alert_type": "disk_full",
+    "threshold": 1,
+    "time_window_minutes": 5,
+    "escalation_level": 3,
+    "action": "emergency_call"
+  }
+]

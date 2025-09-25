@@ -1,0 +1,33 @@
+{
+  "domains": [
+    {
+      "name": "general",
+      "keywords": [
+        "general",
+        "común",
+        "básico"
+      ],
+      "description": "Rama general para conversaciones cotidianas"
+    },
+    {
+      "name": "programación",
+      "keywords": [
+        "código",
+        "python",
+        "bug",
+        "error"
+      ],
+      "description": "Rama especializada en programación y desarrollo"
+    },
+    {
+      "name": "finanzas",
+      "keywords": [
+        "bolsa",
+        "precio",
+        "btc",
+        "eur"
+      ],
+      "description": "Rama especializada en finanzas y economía"
+    }
+  ]
+}

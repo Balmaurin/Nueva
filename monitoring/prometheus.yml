@@ -1,0 +1,142 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+scrape_configs:
+  # Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Shaili AI Backend
+  - job_name: 'shaili-backend'
+    static_configs:
+      - targets: ['localhost:8000']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # Shaili AI Frontend
+  - job_name: 'shaili-frontend'
+    static_configs:
+      - targets: ['localhost:3000']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # Shaili AI Monitoring Dashboard
+  - job_name: 'shaili-monitoring-dashboard'
+    static_configs:
+      - targets: ['localhost:8050']
+    metrics_path: '/metrics'
+    scrape_interval: 10s
+
+  # System metrics (via node_exporter if available)
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']
+    scrape_interval: 15s
+
+  # Docker containers
+  - job_name: 'docker'
+    static_configs:
+      - targets: ['localhost:9323']
+    scrape_interval: 15s
+
+  # Custom Shaili AI metrics
+  - job_name: 'shaili-custom-metrics'
+    static_configs:
+      - targets: ['localhost:8001']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+    honor_labels: true
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+# Alert rules
+groups:
+  - name: shaili_alerts
+    rules:
+      # High CPU usage
+      - alert: HighCPUUsage
+        expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 90
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage detected"
+          description: "CPU usage is above 90% for more than 5 minutes"
+
+      # High memory usage
+      - alert: HighMemoryUsage
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage detected"
+          description: "Memory usage is above 85% for more than 5 minutes"
+
+      # High disk usage
+      - alert: HighDiskUsage
+        expr: (node_filesystem_size_bytes - node_filesystem_free_bytes) / node_filesystem_size_bytes * 100 > 90
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High disk usage detected"
+          description: "Disk usage is above 90% for more than 5 minutes"
+
+      # Service down
+      - alert: ShailiBackendDown
+        expr: up{job="shaili-backend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Shaili AI Backend is down"
+          description: "The backend service has been down for more than 1 minute"
+
+      - alert: ShailiFrontendDown
+        expr: up{job="shaili-frontend"} == 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Shaili AI Frontend is down"
+          description: "The frontend service has been down for more than 1 minute"
+
+      - alert: ShailiMonitoringDown
+        expr: up{job="shaili-monitoring-dashboard"} == 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Shaili AI Monitoring Dashboard is down"
+          description: "The monitoring dashboard has been down for more than 1 minute"
+
+      # High response time
+      - alert: HighResponseTime
+        expr: http_request_duration_seconds{quantile="0.95"} > 5
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High response time detected"
+          description: "95th percentile response time is above 5 seconds"
+
+      # High error rate
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) * 100 > 5
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected"
+          description: "Error rate is above 5% for more than 2 minutes"

@@ -1,0 +1,46 @@
+[MASTER]
+# Configuración personalizada de Pylint para Shaili-AI
+
+# Extensiones de archivos a analizar
+ignore-patterns=*.pyc,*.pyo,*.pyd
+
+# Directorios a ignorar
+ignore=CVS,venv,node_modules
+
+[MESSAGES CONTROL]
+# Habilitar/deshabilitar mensajes específicos
+disable=
+    C0111,  # Documentación de módulos/funciones
+    R0903,  # Muy pocas funciones públicas
+    W0311,  # Indentación incorrecta
+    W0603,  # Uso de variable global
+    R0913,  # Demasiados argumentos
+
+[BASIC]
+# Longitud máxima de línea
+max-line-length=127
+
+# Convenciones de nombres
+good-names=i,j,k,ex,Run,_,df,id
+
+[FORMAT]
+# Máximo de líneas en un método
+max-module-lines=1000
+
+[DESIGN]
+# Complejidad máxima de funciones/métodos
+max-args=10
+max-locals=25
+max-returns=8
+max-branches=15
+max-statements=60
+max-parents=7
+max-attributes=10
+max-public-methods=25
+
+[SIMILARITIES]
+# Umbral de similitud para detectar código duplicado
+min-similarity-lines=6
+ignore-comments=yes
+ignore-docstrings=yes
+ignore-imports=yes

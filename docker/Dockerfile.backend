@@ -1,0 +1,35 @@
+# Usar imagen base de Python con soporte para PyTorch y CUDA
+FROM pytorch/pytorch:2.1.0-cuda11.8-cudnn8-runtime
+
+# Establecer directorio de trabajo
+WORKDIR /app
+
+# Instalar dependencias del sistema
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    curl \
+    software-properties-common \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copiar archivos de requerimientos
+COPY requirements.txt .
+
+# Instalar dependencias de Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiar código fuente del backend
+COPY core/ /app/core/
+COPY branches/ /app/branches/
+COPY interface/api/ /app/interface/api/
+COPY utils/ /app/utils/
+
+# Variables de entorno
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Exponer puerto del backend
+EXPOSE 8000
+
+# Comando para ejecutar la aplicación
+CMD ["uvicorn", "interface.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

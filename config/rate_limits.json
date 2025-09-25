@@ -1,0 +1,59 @@
+{
+  "rules": [
+    {
+      "rule_id": "mint_tokens",
+      "description": "Limite de minteo de tokens",
+      "config": {
+        "max_requests": 10,
+        "time_window": 3600,
+        "burst_limit": 3,
+        "cooldown_period": 60
+      },
+      "enabled": true
+    },
+    {
+      "rule_id": "transfer_tokens",
+      "description": "Limite de transferencias",
+      "config": {
+        "max_requests": 50,
+        "time_window": 3600,
+        "burst_limit": 10,
+        "cooldown_period": 60
+      },
+      "enabled": true
+    },
+    {
+      "rule_id": "burn_tokens",
+      "description": "Limite de quema de tokens",
+      "config": {
+        "max_requests": 5,
+        "time_window": 3600,
+        "burst_limit": 2,
+        "cooldown_period": 60
+      },
+      "enabled": true
+    },
+    {
+      "rule_id": "create_account",
+      "description": "Limite de creaci\u00f3n de cuentas",
+      "config": {
+        "max_requests": 3,
+        "time_window": 3600,
+        "burst_limit": 1,
+        "cooldown_period": 60
+      },
+      "enabled": true
+    },
+    {
+      "rule_id": "api_requests",
+      "description": "Limite general de API",
+      "config": {
+        "max_requests": 100,
+        "time_window": 3600,
+        "burst_limit": 20,
+        "cooldown_period": 60
+      },
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "exercises": [
+    {
+      "id": "comprehension",
+      "title": "Comprensión Lectora Avanzada en IA",
+      "description": "Mejora tu comprensión de conceptos fundamentales de inteligencia artificial y machine learning",
+      "category": "comprension",
+      "difficulty": "medium",
+      "total_questions": 10,
+      "time_limit_minutes": 20,
+      "points_per_question": 10,
+      "questions": [
+        {
+          "id": "comp_1",
+          "question": "¿Cuál es la diferencia principal entre inteligencia artificial débil y fuerte?",
+          "correct_answer": "La IA débil está diseñada para tareas específicas, mientras que la IA fuerte puede realizar cualquier tarea intelectual humana",
+          "explanation": "La IA débil (narrow AI) se especializa en tareas específicas, mientras que la IA fuerte (AGI) busca replicar la inteligencia humana general",
+          "difficulty": "medium",
+          "category": "comprension",
+          "points": 10,
+          "metadata": {
+            "topic": "IA",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comp_2",
+          "question": "¿Qué significa el término 'machine learning' en el contexto de la IA?",
+          "correct_answer": "Es un subconjunto de la IA que permite a las computadoras aprender y mejorar automáticamente sin ser programadas explícitamente",
+          "explanation": "Machine learning es una técnica que permite a los sistemas aprender patrones de datos para hacer predicciones o decisiones",
+          "difficulty": "easy",
+          "category": "comprension",
+          "points": 8,
+          "metadata": {
+            "topic": "ML",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "comp_3",
+          "question": "¿Cuál es el papel de los datos en el aprendizaje automático?",
+          "correct_answer": "Los datos son la base fundamental del aprendizaje automático, ya que los algoritmos aprenden patrones y relaciones de estos datos",
+          "explanation": "Sin datos de calidad, los modelos de ML no pueden aprender efectivamente. Los datos determinan qué puede aprender el modelo",
+          "difficulty": "medium",
+          "category": "comprension",
+          "points": 10,
+          "metadata": {
+            "topic": "datos",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comp_4",
+          "question": "¿Qué es el overfitting en machine learning?",
+          "correct_answer": "Es cuando un modelo aprende demasiado bien los datos de entrenamiento pero no generaliza bien a datos nuevos",
+          "explanation": "El overfitting ocurre cuando el modelo memoriza los datos de entrenamiento en lugar de aprender patrones generalizables",
+          "difficulty": "hard",
+          "category": "comprension",
+          "points": 12,
+          "metadata": {
+            "topic": "overfitting",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "comp_5",
+          "question": "¿Cuál es la diferencia entre aprendizaje supervisado y no supervisado?",
+          "correct_answer": "En aprendizaje supervisado usamos datos etiquetados para entrenar, mientras que en no supervisado no tenemos etiquetas",
+          "explanation": "El aprendizaje supervisado requiere ejemplos con respuestas correctas, mientras que el no supervisado encuentra patrones sin etiquetas",
+          "difficulty": "medium",
+          "category": "comprension",
+          "points": 10,
+          "metadata": {
+            "topic": "tipos_ML",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comp_6",
+          "question": "¿Qué es la validación cruzada en machine learning?",
+          "correct_answer": "Es una técnica para evaluar modelos dividiendo los datos en múltiples subconjuntos y entrenando/validando en diferentes combinaciones",
+          "explanation": "La validación cruzada ayuda a obtener una estimación más robusta del rendimiento del modelo",
+          "difficulty": "hard",
+          "category": "comprension",
+          "points": 12,
+          "metadata": {
+            "topic": "validacion",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "comp_7",
+          "question": "¿Cuál es el propósito de la normalización de datos?",
+          "correct_answer": "Es escalar los datos para que tengan un rango similar, mejorando el rendimiento y convergencia de los algoritmos",
+          "explanation": "La normalización evita que algunas características dominen el entrenamiento debido a sus escalas diferentes",
+          "difficulty": "medium",
+          "category": "comprension",
+          "points": 10,
+          "metadata": {
+            "topic": "preprocesamiento",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comp_8",
+          "question": "¿Qué son las redes neuronales convolucionales (CNN)?",
+          "correct_answer": "Son redes neuronales especializadas en procesar datos con estructura de cuadrícula, como imágenes",
+          "explanation": "Las CNN usan filtros convolucionales para detectar características locales en los datos",
+          "difficulty": "hard",
+          "category": "comprension",
+          "points": 12,
+          "metadata": {
+            "topic": "CNN",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "comp_9",
+          "question": "¿Cuál es la función de activación ReLU?",
+          "correct_answer": "Es una función que devuelve el máximo entre 0 y el valor de entrada: f(x) = max(0, x)",
+          "explanation": "ReLU introduce no-linealidad y ayuda a combatir el problema del gradiente desaparecido",
+          "difficulty": "medium",
+          "category": "comprension",
+          "points": 10,
+          "metadata": {
+            "topic": "activacion",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "comp_10",
+          "question": "¿Qué es el aprendizaje por refuerzo?",
+          "correct_answer": "Es un tipo de aprendizaje donde un agente aprende a tomar decisiones mediante interacción con un entorno y recibiendo recompensas",
+          "explanation": "El agente aprende qué acciones maximizan las recompensas a largo plazo",
+          "difficulty": "hard",
+          "category": "comprension",
+          "points": 12,
+          "metadata": {
+            "topic": "RL",
+            "complexity": "advanced"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Comprender conceptos fundamentales de IA",
+        "Diferenciar tipos de aprendizaje automático",
+        "Entender problemas comunes en ML"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "AI/ML",
+        "estimated_time": "20 min"
+      }
+    },
+    {
+      "id": "logic",
+      "title": "Lógica Matemática y Razonamiento",
+      "description": "Desarrolla tu capacidad de razonamiento lógico y resolución de problemas matemáticos",
+      "category": "logica",
+      "difficulty": "medium",
+      "total_questions": 10,
+      "time_limit_minutes": 25,
+      "points_per_question": 10,
+      "questions": [
+        {
+          "id": "logic_1",
+          "question": "Si A + B = 15 y A * B = 56, ¿cuáles son los valores de A y B?",
+          "correct_answer": "A = 7, B = 8",
+          "explanation": "Resolviendo el sistema: A + B = 15, A * B = 56. Sustituyendo: A(15-A) = 56 → A² - 15A + 56 = 0 → A = 7 o A = 8",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "algebra",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_2",
+          "question": "¿Cuántos números de 3 dígitos se pueden formar con los dígitos 1, 2, 3, 4, 5 sin repetir?",
+          "correct_answer": "60",
+          "explanation": "P(5,3) = 5!/(5-3)! = 5!/2! = 120/2 = 60",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "permutaciones",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_3",
+          "question": "Si una secuencia sigue el patrón 2, 6, 12, 20, 30, ¿cuál es el siguiente número?",
+          "correct_answer": "42",
+          "explanation": "La diferencia entre términos consecutivos aumenta en 2: +4, +6, +8, +10, +12. Por tanto, 30 + 12 = 42",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "secuencias",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_4",
+          "question": "¿Cuál es la probabilidad de obtener exactamente 2 caras al lanzar una moneda 4 veces?",
+          "correct_answer": "6/16 = 3/8",
+          "explanation": "C(4,2) = 6 formas de obtener 2 caras en 4 lanzamientos. Probabilidad = 6/2⁴ = 6/16 = 3/8",
+          "difficulty": "hard",
+          "category": "logica",
+          "points": 12,
+          "metadata": {
+            "topic": "probabilidad",
+            "complexity": "advanced"
+          }
+        },
+        {
+          "id": "logic_5",
+          "question": "Si f(x) = 2x + 3 y g(x) = x² - 1, ¿cuál es f(g(2))?",
+          "correct_answer": "9",
+          "explanation": "g(2) = 2² - 1 = 4 - 1 = 3. f(g(2)) = f(3) = 2(3) + 3 = 6 + 3 = 9",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "funciones",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_6",
+          "question": "¿Cuál es el área de un círculo inscrito en un cuadrado de lado 6?",
+          "correct_answer": "9π",
+          "explanation": "El diámetro del círculo es igual al lado del cuadrado = 6. Radio = 3. Área = πr² = π(3)² = 9π",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "geometria",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_7",
+          "question": "¿Cuántos divisores tiene el número 36?",
+          "correct_answer": "9",
+          "explanation": "36 = 2² × 3². Número de divisores = (2+1)(2+1) = 3 × 3 = 9",
+          "difficulty": "medium",
+          "category": "logica",
+          "points": 10,
+          "metadata": {
+            "topic": "divisores",
+            "complexity": "intermediate"
+          }
+        },
+        {
+          "id": "logic_8",
+          "question": "Si log₂(x) = 5, ¿cuál es el valor de x?",
+          "correct_answer": "32",
+          "explanation": "log₂(x) = 5 significa que 2⁵ = x. Por tanto, x = 32",
+          "difficulty": "easy",
+          "category": "logica",
+          "points": 8,
+          "metadata": {
+            "topic": "logaritmos",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "logic_9",
+          "question": "¿Cuál es la suma de los primeros 10 números naturales?",
+          "correct_answer": "55",
+          "explanation": "Suma = n(n+1)/2 = 10(11)/2 = 110/2 = 55",
+          "difficulty": "easy",
+          "category": "logica",
+          "points": 8,
+          "metadata": {
+            "topic": "sumas",
+            "complexity": "basic"
+          }
+        },
+        {
+          "id": "logic_10",
+          "question": "¿Cuál es el valor de la expresión: 2³ × 3² ÷ 6?",
+          "correct_answer": "12",
+          "explanation": "2³ × 3² ÷ 6 = 8 × 9 ÷ 6 = 72 ÷ 6 = 12",
+          "difficulty": "easy",
+          "category": "logica",
+          "points": 8,
+          "metadata": {
+            "topic": "aritmetica",
+            "complexity": "basic"
+          }
+        }
+      ],
+      "learning_objectives": [
+        "Mejorar razonamiento lógico",
+        "Desarrollar habilidades matemáticas",
+        "Practicar resolución de problemas"
+      ],
+      "prerequisites": [],
+      "metadata": {
+        "domain": "Mathematics",
+        "estimated_time": "25 min"
+      }
+    }
+  ]
+}

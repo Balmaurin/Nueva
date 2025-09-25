@@ -1,0 +1,40 @@
+inference:
+  max_input_tokens: 24000        # límite operativo para 8 GB VRAM
+  max_output_tokens: 768
+  sliding_window: true
+  sw_summary_every: 8000         # resume cada 8k tokens
+  attention_impl: "flash"        # usar flash/paged si disponible
+  stop_sequences: ["</resp>", "</sys>"]
+  repetition_penalty: 1.15
+  ngram_no_repeat: 3
+
+telemetry:
+  track_vram: true               # log de VRAM p50/p95
+
+rag:
+  embed_model: "sentence-transformers/all-MiniLM-L6-v2"
+  dim: 384
+  chunk_tokens: 896
+  chunk_overlap: 128
+  hybrid_bm25: true
+  faiss:
+    index: "IVF256,PQ64"         # entrenamiento kmeans + PQ
+    nprobe: 16
+
+privacy:
+  ttl_days:
+    default: 90
+    medico: 30
+    sensitivo: 7
+  export_format: "jsonl"
+
+slo:
+  response_p95_s: 6.0                 # entrada 24k + salida 256
+  tool_schema_violation_rate: 0.5     # por 1000 tool-calls
+  rag_hit_rate: 0.60                  # cuando RAG se activa
+  factuality_pass_rate: 0.80          # en golden set factual
+  adapter_load_p95_ms: 250
+
+adapters:
+  cache_max: 6                   # número de adapters en VRAM
+  unload_threshold_gb: 7.5

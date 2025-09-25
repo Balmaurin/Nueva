@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-08-27T17:24:52.023960+00:00",
+  "session_id": "0257076012874d3602617c17fd6646dcd7e40fdb8884c51c8e33f0cde802fdb6",
+  "domain": "casos_extremos",
+  "sheilys": 4.83,
+  "details": {
+    "timestamp": "2025-08-27T17:24:52.023713",
+    "domain": "casos_extremos",
+    "query": "",
+    "response": "Respuesta sin contexto",
+    "quality_score": 0.6499999999999999,
+    "tokens_used": 3,
+    "session_id": "0257076012874d3602617c17fd6646dcd7e40fdb8884c51c8e33f0cde802fdb6"
+  },
+  "reward_id": "15304b7d3bc1a6df6d50e1a735231bdb3d93ac65b9ddba1913305c3a9aec993f"
+}

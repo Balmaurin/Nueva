@@ -1,0 +1,7 @@
+{
+  "domains": [
+    { "name": "general", "keywords": ["general", "común", "básico"] },
+    { "name": "programación", "keywords": ["código", "python", "bug", "error"] },
+    { "name": "finanzas", "keywords": ["bolsa", "precio", "btc", "eur"] }
+  ]
+}

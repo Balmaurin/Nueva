@@ -1,0 +1,50 @@
+{
+  "networks": {
+    "devnet": {
+      "rpc_url": "https://api.devnet.solana.com",
+      "ws_url": "wss://api.devnet.solana.com",
+      "commitment": "confirmed",
+      "timeout": 30,
+      "description": "Red de desarrollo de Solana"
+    },
+    "testnet": {
+      "rpc_url": "https://api.testnet.solana.com",
+      "ws_url": "wss://api.testnet.solana.com",
+      "commitment": "confirmed",
+      "timeout": 30,
+      "description": "Red de pruebas de Solana"
+    },
+    "mainnet-beta": {
+      "rpc_url": "https://api.mainnet-beta.solana.com",
+      "ws_url": "wss://api.mainnet-beta.solana.com",
+      "commitment": "confirmed",
+      "timeout": 30,
+      "description": "Red principal de Solana (requiere API key para uso intensivo)"
+    }
+  },
+  "default_network": "devnet",
+  "api_providers": {
+    "quicknode": {
+      "devnet": "https://your-devnet-endpoint.quiknode.pro/your-api-key/",
+      "testnet": "https://your-testnet-endpoint.quiknode.pro/your-api-key/",
+      "mainnet": "https://your-mainnet-endpoint.quiknode.pro/your-api-key/"
+    },
+    "alchemy": {
+      "devnet": "https://solana-devnet.g.alchemy.com/v2/your-api-key",
+      "testnet": "https://solana-testnet.g.alchemy.com/v2/your-api-key",
+      "mainnet": "https://solana-mainnet.g.alchemy.com/v2/your-api-key"
+    },
+    "infura": {
+      "devnet": "https://solana-devnet.infura.io/v3/your-project-id",
+      "testnet": "https://solana-testnet.infura.io/v3/your-project-id",
+      "mainnet": "https://solana-mainnet.infura.io/v3/your-project-id"
+    }
+  },
+  "settings": {
+    "enable_real_transactions": true,
+    "max_retries": 3,
+    "retry_delay": 1,
+    "cache_ttl": 300,
+    "log_level": "INFO"
+  }
+}

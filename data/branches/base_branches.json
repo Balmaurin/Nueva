@@ -1,0 +1,23 @@
+{
+  "domains": [
+    {
+      "name": "general",
+      "keywords": [
+        "general",
+        "común",
+        "básico"
+      ],
+      "description": "Rama general para conversaciones cotidianas"
+    },
+    {
+      "name": "diseño_y_ux",
+      "keywords": ["diseño", "ux", "interfaces", "experiencia", "usuario"],
+      "description": "Rama especializada en diseño y UX"
+    },
+    {
+      "name": "general",
+      "keywords": ["general", "común", "básico", "conversación", "cotidiano"],
+      "description": "Rama general para conversaciones cotidianas"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "models": {
+    "demo-model": {
+      "path": "/path/to/demo/model",
+      "type": "causal_lm",
+      "description": "Modelo de demostración",
+      "author": "Sistema Demo",
+      "tags": [
+        "demo",
+        "test",
+        "causal_lm"
+      ],
+      "size_gb": 2.5,
+      "registered_at": 1756532256.6349757,
+      "last_updated": 1756532256.6349766
+    },
+    "test_causal_model": {
+      "path": "/tmp/test_model",
+      "type": "causal_lm",
+      "description": "Modelo causal de prueba",
+      "author": "Shaili AI",
+      "tags": [],
+      "size_gb": 1.0,
+      "registered_at": 1756534386.337924,
+      "last_updated": 1756534386.337926
+    },
+    "registered_model": {
+      "path": "/path/to/registered/model",
+      "type": "causal_lm",
+      "description": "Modelo registrado de prueba",
+      "author": "Shaili AI",
+      "tags": [],
+      "size_gb": 3.0,
+      "registered_at": 1756534386.338328,
+      "last_updated": 1756534386.338329
+    },
+    "operations_test_model": {
+      "path": "/tmp/operations_test",
+      "type": "causal_lm",
+      "description": "Modelo para pruebas de operaciones",
+      "author": "Shaili AI",
+      "tags": [],
+      "size_gb": 1.0,
+      "registered_at": 1756534386.33873,
+      "last_updated": 1756534386.338731
+    },
+    "integration_model_0": {
+      "path": "/tmp/integration_0",
+      "type": "causal_lm",
+      "description": "Modelo de integración 0",
+      "author": "Shaili AI",
+      "tags": [],
+      "size_gb": 1.0,
+      "registered_at": 1756534386.33922,
+      "last_updated": 1756534386.339221
+    },
+    "integration_model_1": {
+      "path": "/tmp/integration_1",
+      "type": "causal_lm",
+      "description": "Modelo de integración 1",
+      "author": "Shaili AI",
+      "tags": [],
+      "size_gb": 1.5,
+      "registered_at": 1756534386.339424,
+      "last_updated": 1756534386.339425
+    },
+    "integration_model_2": {
+      "path": "/tmp/integration_2",
+      "type": "causal_lm",
+      "description": "Modelo de integración 2",
+      "author": "Shaili AI",
+      "tags": [],
+      "size_gb": 2.0,
+      "registered_at": 1756534386.339617,
+      "last_updated": 1756534386.339618
+    }
+  },
+  "total_models": 7,
+  "last_updated": 1756534386.339619
+}

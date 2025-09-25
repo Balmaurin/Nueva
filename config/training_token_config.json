@@ -1,0 +1,41 @@
+{
+  "points_per_training": 10,
+  "tokens_per_point": 0.5,
+  "min_training_duration": 5,
+  "max_daily_tokens": 100,
+  "training_types": {
+    "meditation": {
+      "points": 10,
+      "tokens": 5
+    },
+    "breathing": {
+      "points": 8,
+      "tokens": 4
+    },
+    "focus": {
+      "points": 12,
+      "tokens": 6
+    },
+    "memory": {
+      "points": 15,
+      "tokens": 7.5
+    },
+    "creativity": {
+      "points": 10,
+      "tokens": 5
+    }
+  },
+  "bonus_conditions": {
+    "streak_days": {
+      "days": 7,
+      "bonus_tokens": 10
+    },
+    "perfect_completion": {
+      "bonus_tokens": 2
+    },
+    "long_session": {
+      "minutes": 30,
+      "bonus_tokens": 5
+    }
+  }
+}

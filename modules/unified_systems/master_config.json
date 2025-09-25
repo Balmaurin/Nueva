@@ -1,0 +1,202 @@
+{
+  "system_name": "NeuroFusion Master System",
+  "version": "3.0.0",
+  "mode": "production",
+  
+  "base_path": "./",
+  "data_path": "./data",
+  "models_path": "./models",
+  "cache_path": "./cache",
+  "logs_path": "./logs",
+  
+  "enable_embeddings": true,
+  "enable_generation": true,
+  "enable_learning": true,
+  "enable_consciousness": true,
+  "enable_security": true,
+  "enable_training": true,
+  "enable_branch_tokenizer": true,
+  "enable_consolidated_architecture": true,
+  
+  "max_concurrent_operations": 20,
+  "cache_enabled": true,
+  "monitoring_enabled": true,
+  
+  "database_url": "sqlite:///neurofusion_master.db",
+  
+  "components": {
+    "core": {
+      "system_name": "NeuroFusion Master System",
+      "version": "3.0.0",
+      "debug_mode": false,
+      "max_concurrent_operations": 20,
+      "cache_enabled": true,
+      "cache_size": 10000
+    },
+    
+    "embeddings": {
+      "model_name": "all-MiniLM-L6-v2",
+      "embedding_dim": 384,
+      "max_sequence_length": 512,
+      "normalize_embeddings": true,
+      "batch_size": 32,
+      "device": "auto",
+      "cache_enabled": true,
+      "cache_strategy": "lru",
+      "cache_max_size": 10000,
+      "cache_ttl": 3600,
+      "compression_enabled": true,
+      "quality_monitoring": true,
+      "performance_tracking": true
+    },
+    
+    "generation": {
+      "generation_type": "text",
+      "response_mode": "adaptive",
+      "validation_level": "semantic",
+      "max_length": 1000,
+      "temperature": 0.7,
+      "creativity_level": 0.5,
+      "context_window": 10,
+      "quality_threshold": 0.7,
+      "enable_adaptation": true,
+      "enable_refinement": true
+    },
+    
+    "learning": {
+      "learning_rate": 0.01,
+      "batch_size": 32,
+      "max_epochs": 100,
+      "early_stopping_patience": 10,
+      "validation_split": 0.2,
+      "enable_adaptive_learning": true,
+      "quality_threshold": 0.7,
+      "performance_tracking": true,
+      "knowledge_base_size": 10000
+    },
+    
+    "quality": {
+      "similarity_threshold": 0.6,
+      "toxicity_threshold": 0.1,
+      "hallucination_threshold": 0.3,
+      "coherence_threshold": 0.7,
+      "relevance_threshold": 0.8,
+      "completeness_threshold": 0.6,
+      "enable_advanced_metrics": true,
+      "performance_tracking": true
+    },
+    
+    "consciousness": {
+      "consciousness_level": "aware",
+      "memory_capacity": 10000,
+      "working_memory_size": 100,
+      "episodic_memory_retention": 0.8,
+      "semantic_memory_consolidation": 0.6,
+      "reasoning_depth": 3,
+      "reflection_enabled": true,
+      "creativity_enabled": true,
+      "emotional_awareness": true
+    },
+    
+    "security": {
+      "jwt_secret": "neurofusion_master_secret_2024",
+      "jwt_algorithm": "HS256",
+      "jwt_expiration": 3600,
+      "password_min_length": 8,
+      "password_require_special": true,
+      "password_require_numbers": true,
+      "password_require_uppercase": true,
+      "max_login_attempts": 5,
+      "lockout_duration": 900,
+      "session_timeout": 1800,
+      "enable_2fa": true,
+      "enable_audit_logging": true,
+      "enable_intrusion_detection": true
+    },
+    
+    "training": {
+      "model_name": "neurofusion/base-model",
+      "max_seq_length": 512,
+      "batch_size": 16,
+      "learning_rate": 1e-4,
+      "weight_decay": 0.01,
+      "num_train_epochs": 3,
+      "gradient_accumulation_steps": 4,
+      "mixed_precision": true,
+      "lora_r": 16,
+      "lora_alpha": 32,
+      "lora_dropout": 0.1,
+      "early_stop_patience": 3,
+      "evaluation_strategy": "steps",
+      "eval_steps": 500,
+      "save_steps": 1000,
+      "warmup_steps": 100,
+      "logging_steps": 100,
+      "dataloader_num_workers": 4,
+      "device": "auto"
+    },
+    
+    "consolidated": {
+      "system_name": "NeuroFusion Master System",
+      "version": "3.0.0",
+      "environment": "production",
+      "base_model_name": "microsoft/DialoGPT-medium",
+      "embedding_model_name": "all-MiniLM-L6-v2",
+      "max_sequence_length": 512,
+      "embedding_dim": 768,
+      "database_url": "sqlite:///neurofusion_unified.db",
+      "cache_enabled": true,
+      "cache_size": 10000,
+      "cache_ttl": 3600,
+      "quality_thresholds": {
+        "relevance": 0.7,
+        "coherence": 0.8,
+        "factuality": 0.8,
+        "toxicity": 0.1,
+        "hallucination": 0.2
+      },
+      "jwt_secret": "neurofusion_secret_key_2024",
+      "jwt_expiration": 3600,
+      "encryption_key": "neurofusion_encryption_key_2024",
+      "monitoring_enabled": true,
+      "metrics_interval": 60,
+      "alert_threshold": 0.8
+    }
+  },
+  
+  "api": {
+    "host": "127.0.0.1",
+    "port": 8000,
+    "cors_enabled": true,
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 100
+    }
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "metrics_enabled": true,
+    "health_check_interval": 30,
+    "log_retention_days": 30
+  },
+  
+  "performance": {
+    "max_response_time": 5.0,
+    "concurrent_queries": 20,
+    "memory_limit_mb": 2048,
+    "cpu_limit_percent": 80
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "file_enabled": true,
+    "console_enabled": true,
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "rotation": {
+      "enabled": true,
+      "max_size_mb": 100,
+      "backup_count": 5
+    }
+  }
+}

@@ -1,0 +1,81 @@
+version: 1.0
+
+# Configuración global del modelo
+global_config:
+  base_model: "Phi-3.5-mini-instruct-128k"
+  quantization: 
+    enabled: true
+    type: "4bit"
+    compute_dtype: "bfloat16"
+
+# Hiperparámetros de entrenamiento
+training_hyperparameters:
+  max_seq_length: 512
+  epochs: 3
+  batch_size: 4
+  learning_rate: 1e-4
+  warmup_ratio: 0.1
+  weight_decay: 0.01
+  gradient_clip: 1.0
+
+# Configuración de LoRA
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: 
+    - "q_proj"
+    - "v_proj"
+    - "o_proj"
+
+# Estrategias de optimización
+optimization:
+  optimizer: "AdamW"
+  lr_scheduler: "cosine"
+  mixed_precision: true
+
+# Parada temprana
+early_stopping:
+  patience: 3
+  min_delta: 0.001
+
+# Métricas de evaluación
+evaluation_metrics:
+  - accuracy
+  - perplexity
+  - loss
+
+# Política de actualización de adapters
+adapter_update_policy:
+  max_adapters_per_domain: 5
+  max_adapter_age_days: 90
+  performance_threshold: 0.1
+
+# Configuración de logging
+logging:
+  level: "INFO"
+  wandb:
+    project: "sheily-branch-training"
+    entity: "sheily-ai"
+    tags: 
+      - "adapter-training"
+      - "specialized-branches"
+
+# Dominios prioritarios
+priority_domains:
+  - "Medicina y Salud"
+  - "Matemáticas"
+  - "Computación y Programación"
+  - "Ciencia de Datos e IA"
+  - "Física"
+
+# Configuraciones de privacidad
+privacy:
+  pii_filtering: true
+  anonymization: "masking"
+
+# Recursos computacionales
+resources:
+  max_gpu_memory: 8  # GB
+  cpu_cores: 4
+  ram: 16  # GB

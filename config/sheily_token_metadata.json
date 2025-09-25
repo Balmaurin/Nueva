@@ -1,0 +1,37 @@
+{
+  "name": "SHEILY Token",
+  "symbol": "SHEILY",
+  "description": "Token de recompensa para el sistema NeuroFusion",
+  "image": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png",
+  "attributes": [
+    {
+      "trait_type": "Tipo",
+      "value": "Token de Recompensa"
+    },
+    {
+      "trait_type": "Sistema",
+      "value": "NeuroFusion"
+    },
+    {
+      "trait_type": "Red",
+      "value": "Solana Devnet"
+    },
+    {
+      "trait_type": "Decimales",
+      "value": 9
+    },
+    {
+      "trait_type": "Supply Inicial",
+      "value": 1000000000
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "type": "image/png",
+        "uri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png"
+      }
+    ],
+    "category": "image"
+  }
+}

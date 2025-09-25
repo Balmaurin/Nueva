@@ -1,0 +1,201 @@
+{
+  "system_info": {
+    "name": "Sistema de Módulos Unificado Shaili AI (Estructura Actualizada)",
+    "version": "2.0.0",
+    "description": "Sistema unificado para gestión y acceso a todos los módulos del proyecto Shaili AI con estructura modular unificada",
+    "author": "Shaili AI Team",
+    "created_date": "2024-01-01",
+    "last_updated": "2025-08-29"
+  },
+  "initialization": {
+    "auto_initialize": true,
+    "validate_critical_modules": true,
+    "test_basic_functionality": true,
+    "timeout_seconds": 30,
+    "retry_attempts": 3,
+    "log_level": "INFO"
+  },
+  "module_categories": {
+    "ai": {
+      "description": "Módulos de Inteligencia Artificial",
+      "priority": "high",
+      "critical_modules": ["text_processor", "semantic_analyzer", "llm_manager"]
+    },
+    "memory": {
+      "description": "Sistema de memoria y gestión de datos",
+      "priority": "high",
+      "critical_modules": ["data_management", "rag_retriever", "short_term_memory"]
+    },
+    "training": {
+      "description": "Sistema de entrenamiento y aprendizaje",
+      "priority": "medium",
+      "critical_modules": ["advanced_training", "lora_trainer"]
+    },
+    "blockchain": {
+      "description": "Sistema de blockchain y tokens",
+      "priority": "medium",
+      "critical_modules": ["token_manager", "solana_blockchain"]
+    },
+    "security": {
+      "description": "Sistema de seguridad y autenticación",
+      "priority": "high",
+      "critical_modules": ["unified_core", "unified_launcher"]
+    },
+    "evaluation": {
+      "description": "Sistema de evaluación y métricas",
+      "priority": "medium",
+      "critical_modules": ["model_validator", "performance_monitor"]
+    },
+    "tokens": {
+      "description": "Sistema de tokens y recompensas",
+      "priority": "medium",
+      "critical_modules": ["advanced_token_system", "unified_token_system"]
+    },
+    "recommendations": {
+      "description": "Sistema de recomendaciones personalizadas",
+      "priority": "low",
+      "critical_modules": ["personalized_recommendations"]
+    },
+    "embeddings": {
+      "description": "Sistema de embeddings y búsqueda semántica",
+      "priority": "medium",
+      "critical_modules": ["semantic_search", "embedding_monitor"]
+    },
+    "nucleo_central": {
+      "description": "Núcleo central del sistema",
+      "priority": "high",
+      "critical_modules": ["neurofusion_core", "integration_manager"]
+    },
+    "core": {
+      "description": "Módulos del núcleo del sistema",
+      "priority": "high",
+      "critical_modules": ["neurofusion_core", "integration_manager"]
+    },
+    "orchestrator": {
+      "description": "Sistema de orquestación y enrutamiento",
+      "priority": "high",
+      "critical_modules": ["domain_classifier", "semantic_router"]
+    },
+    "reinforcement": {
+      "description": "Sistema de aprendizaje por refuerzo",
+      "priority": "low",
+      "critical_modules": ["adaptive_learning_agent"]
+    },
+    "rewards": {
+      "description": "Sistema de recompensas y optimización",
+      "priority": "medium",
+      "critical_modules": ["reward_system", "session_tracker"]
+    },
+    "adapters": {
+      "description": "Sistema de adaptadores y compatibilidad",
+      "priority": "low",
+      "critical_modules": ["compatibility_adapter"]
+    },
+    "plugins": {
+      "description": "Sistema de plugins y extensiones",
+      "priority": "low",
+      "critical_modules": ["logging_plugin"]
+    },
+    "scripts": {
+      "description": "Scripts y herramientas de utilidad",
+      "priority": "low",
+      "critical_modules": []
+    },
+    "utils": {
+      "description": "Utilidades y configuraciones",
+      "priority": "low",
+      "critical_modules": []
+    },
+    "visualization": {
+      "description": "Sistema de visualización y dashboards",
+      "priority": "low",
+      "critical_modules": []
+    },
+    "learning": {
+      "description": "Sistema de aprendizaje y plasticidad neural",
+      "priority": "low",
+      "critical_modules": ["neural_plasticity"]
+    },
+    "ai_components": {
+      "description": "Componentes avanzados de IA",
+      "priority": "medium",
+      "critical_modules": ["advanced_ai_system", "contextual_reasoning"]
+    },
+    "src": {
+      "description": "Módulos de clustering y expansión de dominio",
+      "priority": "low",
+      "critical_modules": ["semantic_clustering"]
+    },
+    "unified_systems": {
+      "description": "Sistemas unificados y de alto nivel",
+      "priority": "medium",
+      "critical_modules": []
+    }
+  },
+  "dependencies": {
+    "required_packages": [
+      "torch",
+      "transformers",
+      "numpy",
+      "pandas",
+      "scikit-learn",
+      "sentence-transformers",
+      "faiss-cpu",
+      "psycopg2-binary",
+      "asyncio",
+      "aiohttp",
+      "httpx"
+    ],
+    "optional_packages": [
+      "matplotlib",
+      "seaborn",
+      "plotly",
+      "streamlit",
+      "gradio"
+    ]
+  },
+  "performance": {
+    "max_concurrent_requests": 10,
+    "request_timeout": 30,
+    "memory_limit_mb": 2048,
+    "cpu_limit_percent": 80,
+    "enable_caching": true,
+    "cache_ttl_seconds": 3600
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file_path": "logs/module_system.log",
+    "max_file_size_mb": 10,
+    "backup_count": 5
+  },
+  "monitoring": {
+    "enable_metrics": true,
+    "metrics_interval_seconds": 60,
+    "enable_health_checks": true,
+    "health_check_interval_seconds": 300,
+    "alert_on_failure": true
+  },
+  "security": {
+    "enable_authentication": false,
+    "enable_authorization": false,
+    "enable_rate_limiting": true,
+    "max_requests_per_minute": 100,
+    "enable_audit_logging": true
+  },
+  "paths": {
+    "data_directory": "data",
+    "logs_directory": "logs",
+    "models_directory": "models",
+    "cache_directory": "cache",
+    "config_directory": "config"
+  },
+  "features": {
+    "enable_async_execution": true,
+    "enable_module_hot_reload": false,
+    "enable_dependency_injection": true,
+    "enable_plugin_system": true,
+    "enable_metrics_collection": true,
+    "enable_error_recovery": true
+  }
+}

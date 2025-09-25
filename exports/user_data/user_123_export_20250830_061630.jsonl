@@ -1,0 +1,2 @@
+{"id": "674f69eec1d14a57670bc00f3c6a1f69386b102618cdc90674525bf33146254c", "domain": "user_profile", "data_type": "profile", "content": {"name": "Juan Pérez", "email": "juan@example.com", "preferences": {"language": "es", "theme": "dark"}}, "timestamp": "2025-08-30T06:16:30.543000", "is_pii": true}
+{"id": "d4f316a30df8dc1d9b6eebf2845e8e73b27088fc1a6893526525ba3025b9e1ab", "domain": "analytics", "data_type": "session", "content": {"last_login": "2024-01-15", "session_count": 5}, "timestamp": "2025-08-30T06:16:30.552000", "is_pii": false}

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-08-27T17:24:22.630083+00:00",
+  "session_id": "40742c6aaad893e3a7168dd71845e4723bf6f192572b47f4e0f28ebea1a36cf2",
+  "domain": "sistemas_devops_redes",
+  "sheilys": 7.0,
+  "details": {
+    "timestamp": "2025-08-27T17:24:22.629781",
+    "domain": "sistemas_devops_redes",
+    "query": "Explícame los conceptos básicos de Docker",
+    "response": "Docker es una plataforma de contenedores que permite empaquetar, distribuir y ejecutar aplicaciones de manera consistente en diferentes entornos.",
+    "quality_score": 0.6499999999999999,
+    "tokens_used": 25,
+    "session_id": "40742c6aaad893e3a7168dd71845e4723bf6f192572b47f4e0f28ebea1a36cf2"
+  },
+  "reward_id": "dc94ad18ffdaa7f97d11d298ba216fae3f2ee3a363199059e3c3d70264859076"
+}
