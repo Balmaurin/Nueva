@@ -147,6 +147,8 @@ MODEL_SERVER_URL=http://localhost:8005
 LLM_MODEL_NAME=Llama-3.2-3B-Instruct-Q8_0
 ```
 
+> **Importante:** El backend ya no inicia con credenciales ficticias para PostgreSQL. Debes definir `DB_HOST`, `DB_NAME`, `DB_USER` y `DB_PASSWORD` con valores reales antes de arrancar en modo PostgreSQL. Si prefieres evitar un motor externo durante el desarrollo, establece `DB_TYPE=sqlite` para utilizar automáticamente la base de datos embebida `./sheily_ai.db`.
+
 ### Configuración de Ramas
 Las 35 ramas están configuradas en `config/unified_config.json`:
 

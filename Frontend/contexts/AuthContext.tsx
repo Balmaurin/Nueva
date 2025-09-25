@@ -19,6 +19,8 @@ interface AuthContextType {
   isAuthenticated: boolean;
 }
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? '';
+
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const useAuth = () => {
@@ -52,11 +54,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const verifyToken = async (token: string) => {
     try {
-      const response = await fetch('http://localhost:8002/api/auth/me', {
+      const response = await fetch(`${API_BASE}/api/auth/me`, {
         headers: {
-          'Authorization': `Bearer ${token}`,
-          'Origin': window.location.origin,
-        }
+          Authorization: `Bearer ${token}`,
+        },
       });
 
       if (response.ok) {
@@ -80,19 +81,23 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const login = async (username: string, password: string): Promise<{ success: boolean; message: string }> => {
     try {
-      const response = await fetch('http://localhost:8002/api/auth/login', {
+      const response = await fetch(`${API_BASE}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Origin': window.location.origin, // Agregar origin explícitamente
         },
-        body: JSON.stringify({ identifier: username, password }),
+        body: JSON.stringify({ username, password }),
       });
 
       const data = await response.json();
 
       if (response.ok && data.access_token) {
-        const userData = data.user || { id: '1', username: username, email: '', role: 'user' };
+        const userData = data.user || {
+          id: data?.user?.id ?? username,
+          username,
+          email: data?.user?.email ?? '',
+          role: data?.user?.role ?? 'user',
+        };
         const authToken = data.access_token;
         const message = data.message || 'Inicio de sesión exitoso';
 
@@ -112,11 +117,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const register = async (username: string, email: string, password: string): Promise<{ success: boolean; message: string }> => {
     try {
-      const response = await fetch('http://localhost:8002/api/auth/register', {
+      const response = await fetch(`${API_BASE}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Origin': window.location.origin,
         },
         body: JSON.stringify({ username, email, password }),
       });

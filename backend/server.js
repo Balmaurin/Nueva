@@ -1,53 +1,68 @@
-// Cargar variables de entorno desde archivo de configuración
-require('dotenv').config({ path: __dirname + '/config.env' });
+const fs = require('fs');
+const path = require('path');
+const dotenv = require('dotenv');
 
-// Verificar que las variables de entorno se cargaron correctamente
-console.log('🔧 Variables de entorno cargadas:');
-console.log('   - JWT_SECRET length:', process.env.JWT_SECRET ? process.env.JWT_SECRET.length : 'undefined');
-console.log('   - DB_TYPE:', process.env.DB_TYPE || 'undefined');
-console.log('   - PORT:', process.env.PORT || 'undefined');
+// Cargar variables de entorno desde el archivo disponible más seguro
+const candidateEnvFiles = ['config.env.secure', 'config.env'].map((file) =>
+  path.join(__dirname, file)
+);
+
+let loadedEnvFile = false;
+
+for (const filePath of candidateEnvFiles) {
+  if (!fs.existsSync(filePath)) {
+    continue;
+  }
+
+  try {
+    const parsed = dotenv.parse(fs.readFileSync(filePath));
+    const hasShellPlaceholders = Object.values(parsed).some((value) =>
+      typeof value === 'string' && value.includes('${')
+    );
+
+    if (hasShellPlaceholders) {
+      console.warn(
+        `⚠️  Omitiendo ${path.basename(
+          filePath
+        )} porque contiene placeholders de shell sin resolver.`
+      );
+      continue;
+    }
+
+    dotenv.config({ path: filePath });
+    loadedEnvFile = true;
+    console.log(`🔧 Variables de entorno cargadas desde ${path.basename(filePath)}`);
+    break;
+  } catch (error) {
+    console.warn(`⚠️  No se pudo cargar ${path.basename(filePath)}:`, error.message);
+  }
+}
+
+if (!loadedEnvFile) {
+  dotenv.config();
+  console.log('🔧 Variables de entorno cargadas desde variables del sistema');
+}
 
 // Importar gestor de configuración unificado (con fallback)
-let get_config, configMiddleware, validationMiddleware, systemMonitor;
+let get_config;
+let configMiddleware;
+let validationMiddleware;
+let systemMonitor;
 
 try {
-    const configManager = require('../config/config_manager');
-    get_config = configManager.get_config;
-    configMiddleware = require('./middleware/config_middleware');
-    validationMiddleware = require('./middleware/validation_middleware');
-    systemMonitor = require('./monitoring/system_monitor');
+  const configManager = require('../config/config_manager');
+  get_config = configManager.get_config;
+  configMiddleware = require('./middleware/config_middleware');
+  validationMiddleware = require('./middleware/validation_middleware');
+  systemMonitor = require('./monitoring/system_monitor');
 } catch (error) {
-    console.warn('⚠️ Módulos de configuración no disponibles, usando configuración por defecto');
-    get_config = (key, defaultValue) => defaultValue;
-    configMiddleware = { 
-        injectConfig: (req, res, next) => next(),
-        validateCriticalConfig: (req, res, next) => next(),
-        logConfig: (req, res, next) => next(),
-        getSystemConfig: (req, res) => res.json({ success: true, config: {} }),
-        validateSystemConfig: (req, res) => res.json({ success: true, validation: { valid: true } })
-    };
-    validationMiddleware = {
-        sanitizeInput: (req, res, next) => next(),
-        validatePayloadSize: () => (req, res, next) => next(),
-        validate: () => (req, res, next) => next()
-    };
-    systemMonitor = {
-        recordAPIRequest: () => {},
-        getMetrics: () => ({}),
-        getAlerts: () => ([]),
-        getHealthStatus: () => ({ status: 'healthy' })
-    };
+  console.error('❌ Error cargando módulos de configuración críticos:', error);
+  process.exit(1);
 }
 
 // Importar sistema de chatbot avanzado
-let ChatbotIntegration;
-try {
-    ChatbotIntegration = require('./chatbot_integration');
-    console.log('✅ Sistema de Chatbot Avanzado cargado');
-} catch (error) {
-    console.warn('⚠️ Sistema de Chatbot Avanzado no disponible:', error.message);
-    ChatbotIntegration = null;
-}
+const ChatbotIntegration = require('./chatbot_integration');
+console.log('✅ Sistema de Chatbot Avanzado cargado');
 
 const express = require('express');
 const cors = require('cors');
@@ -55,8 +70,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
-const path = require('path');
-const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 const WebSocket = require('ws');
 
@@ -77,28 +90,108 @@ let llamaClient = null;
 
 const app = express();
 
-// Handler específico para solicitudes OPTIONS (preflight) - PRIMERO, antes de cualquier middleware
-app.options('*', (req, res) => {
-  try {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Origin, Accept');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.sendStatus(200);
-  } catch (error) {
-    console.error('Error en OPTIONS handler:', error);
-    res.status(500).json({ error: 'Internal server error in OPTIONS' });
+const normalizeOrigin = (origin) => {
+  if (!origin || typeof origin !== 'string') {
+    return '';
   }
-});
+  return origin.trim().replace(/\/$/, '');
+};
+
+const parseListValue = (value) => {
+  if (!value) {
+    return [];
+  }
+  if (Array.isArray(value)) {
+    return value.map(normalizeOrigin).filter(Boolean);
+  }
+  if (typeof value === 'string') {
+    return value
+      .split(',')
+      .map(normalizeOrigin)
+      .filter(Boolean);
+  }
+  return [];
+};
+
+const allowedOrigins = (() => {
+  const originsFromEnv = parseListValue(process.env.ALLOWED_ORIGINS);
+  const originsFromConfig = parseListValue(get_config('server.cors_origins', []));
+  const defaults = ['http://localhost:3000'];
+  return Array.from(new Set([...originsFromEnv, ...originsFromConfig, ...defaults]));
+})();
+
+console.log('🌐 Orígenes permitidos por CORS:', allowedOrigins);
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    const normalized = normalizeOrigin(origin);
+    if (allowedOrigins.includes(normalized)) {
+      return callback(null, true);
+    }
+
+    callback(new Error(`Origen no permitido por CORS: ${origin}`));
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: [
+    'Content-Type',
+    'Authorization',
+    'X-Requested-With',
+    'Origin',
+    'Accept'
+  ],
+  exposedHeaders: ['X-Request-ID']
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 // Usar configuración unificada
 const PORT = get_config('server.port', process.env.PORT || 8000);
 const HOST = get_config('server.host', process.env.HOST || '127.0.0.1');
 // Configuración de seguridad desde configuración unificada
-const JWT_SECRET = process.env.JWT_SECRET || get_config('security.jwt.secret');
-const BCRYPT_ROUNDS = get_config('security.bcrypt.rounds', parseInt(process.env.BCRYPT_ROUNDS) || 12);
-const SESSION_TIMEOUT = get_config('security.jwt.expiration', parseInt(process.env.SESSION_TIMEOUT) || 86400000);
-const isSQLite = (process.env.DB_TYPE || '').toLowerCase() === 'sqlite';
+const resolveConfigValue = (envKey, configKey, fallback) => {
+  const envValue = Object.prototype.hasOwnProperty.call(process.env, envKey)
+    ? process.env[envKey]
+    : undefined;
+
+  if (typeof envValue === 'string' && envValue.trim() !== '') {
+    return envValue;
+  }
+
+  if (configKey) {
+    const configValue = get_config(configKey, undefined);
+    if (configValue !== undefined && configValue !== null) {
+      const serialized = typeof configValue === 'string' ? configValue.trim() : String(configValue).trim();
+      if (serialized !== '') {
+        return configValue;
+      }
+    }
+  }
+
+  return fallback;
+};
+
+const JWT_SECRET = resolveConfigValue('JWT_SECRET', 'security.jwt.secret');
+const resolvedBcryptRounds = Number(resolveConfigValue('BCRYPT_ROUNDS', 'security.bcrypt.rounds', 12));
+const BCRYPT_ROUNDS = Number.isFinite(resolvedBcryptRounds) && resolvedBcryptRounds > 0
+  ? resolvedBcryptRounds
+  : 12;
+const resolvedSessionTimeout = Number(
+  resolveConfigValue('SESSION_TIMEOUT', 'security.jwt.expiration', 86400000)
+);
+const SESSION_TIMEOUT = Number.isFinite(resolvedSessionTimeout) && resolvedSessionTimeout > 0
+  ? resolvedSessionTimeout
+  : 86400000;
+const rawDatabaseType = resolveConfigValue('DB_TYPE', 'database.type', 'postgres');
+const normalizedDatabaseType = typeof rawDatabaseType === 'string'
+  ? rawDatabaseType.trim().toLowerCase()
+  : String(rawDatabaseType || 'postgres').trim().toLowerCase();
+const isSQLite = normalizedDatabaseType === 'sqlite';
 const SUPPORTED_EXERCISE_TYPES = ['yes_no', 'true_false', 'multiple_choice'];
 // Configuración de tokens desde configuración unificada
 const TOKENS_PER_VALIDATED_EXERCISE = get_config('training.tokens_per_exercise', parseInt(process.env.TOKENS_PER_VALIDATED_EXERCISE || '10', 10));
@@ -110,56 +203,100 @@ if (!JWT_SECRET || JWT_SECRET.length < 32) {
   process.exit(1);
 }
 
-// Inicializar sistemas de monitoreo (temporalmente deshabilitados)
-// const chatMetrics = new ChatMetricsCollector();
-// const chatAlerts = new ChatAlertSystem({
-//   thresholds: {
-//     errorRate: 15,
-//     responseTime: 3000,
-//     requestsPerMinute: 50,
-//     consecutiveErrors: 3
-//   },
-//   notificationChannels: ['console', 'email']
-// });
-
-// const chatBackup = new ChatBackupSystem({
-//   backupDir: process.env.BACKUP_DIR || './backups/chat',
-//   maxBackups: parseInt(process.env.MAX_BACKUPS) || 10,
-//   backupInterval: parseInt(process.env.BACKUP_INTERVAL) || 43200000,
-//   compressionLevel: 6
-// });
-
-// Usar objetos vacíos para evitar errores
-const chatMetrics = {
-  recordChatRequest: () => {},
-  recordChatResponse: () => {}
+const monitoringConfig = {
+  alerts: {
+    errorRate: Number(get_config('monitoring.alerts.error_rate_threshold', process.env.ALERT_ERROR_RATE || 10)),
+    responseTime: Number(get_config('monitoring.alerts.response_time_threshold', process.env.ALERT_RESPONSE_TIME || 5000)),
+    requestsPerMinute: Number(get_config('monitoring.alerts.requests_per_minute', process.env.ALERT_REQUESTS_PER_MINUTE || 100)),
+    consecutiveErrors: Number(get_config('monitoring.alerts.consecutive_errors', process.env.ALERT_CONSECUTIVE_ERRORS || 5)),
+    channels: parseListValue(get_config('monitoring.alerts.channels', process.env.ALERT_CHANNELS || 'console'))
+  },
+  email: {
+    host: get_config('monitoring.alerts.email.host', process.env.ALERT_EMAIL_HOST || 'smtp.gmail.com'),
+    port: Number(get_config('monitoring.alerts.email.port', process.env.ALERT_EMAIL_PORT || 587)),
+    secure: get_config('monitoring.alerts.email.secure', process.env.ALERT_EMAIL_SECURE || false),
+    user: get_config('monitoring.alerts.email.user', process.env.ALERT_EMAIL_USER),
+    pass: get_config('monitoring.alerts.email.pass', process.env.ALERT_EMAIL_PASS)
+  },
+  backup: {
+    dir: get_config('monitoring.backup.dir', process.env.BACKUP_DIR || path.resolve(__dirname, '../backups/chat')),
+    maxBackups: Number(get_config('monitoring.backup.max_backups', process.env.MAX_BACKUPS || 10)),
+    interval: Number(get_config('monitoring.backup.interval_ms', process.env.BACKUP_INTERVAL || 12 * 60 * 60 * 1000)),
+    compressionLevel: Number(get_config('monitoring.backup.compression_level', process.env.BACKUP_COMPRESSION_LEVEL || 6)),
+    includeMetadata: get_config('monitoring.backup.include_metadata', process.env.BACKUP_INCLUDE_METADATA || true),
+    retentionDays: Number(get_config('monitoring.backup.retention_days', process.env.BACKUP_RETENTION_DAYS || 30))
+  },
+  realtime: {
+    port: Number(get_config('monitoring.realtime.port', process.env.REALTIME_METRICS_PORT || 8004)),
+    updateInterval: Number(get_config('monitoring.realtime.update_interval_ms', process.env.REALTIME_UPDATE_INTERVAL || 2000)),
+    enableSystemMetrics: get_config('monitoring.realtime.enable_system_metrics', process.env.REALTIME_ENABLE_SYSTEM_METRICS ?? true),
+    enableCustomMetrics: get_config('monitoring.realtime.enable_custom_metrics', process.env.REALTIME_ENABLE_CUSTOM_METRICS ?? true)
+  },
+  cache: {
+    maxSize: Number(get_config('monitoring.cache.max_size', process.env.CACHE_MAX_SIZE || 1000)),
+    maxMemory: Number(get_config('monitoring.cache.max_memory', process.env.CACHE_MAX_MEMORY || 100 * 1024 * 1024)),
+    defaultTTL: Number(get_config('monitoring.cache.default_ttl_ms', process.env.CACHE_DEFAULT_TTL || 5 * 60 * 1000)),
+    policy: get_config('monitoring.cache.policy', process.env.CACHE_POLICY || 'LRU')
+  }
 };
-const chatAlerts = { checkAndAlert: () => {} };
-const chatBackup = { createBackup: () => {} };
 
-// Inicializar nuevos sistemas de monitoreo
+const chatMetrics = new ChatMetricsCollector();
+const chatAlerts = new ChatAlertSystem({
+  thresholds: {
+    errorRate: monitoringConfig.alerts.errorRate,
+    responseTime: monitoringConfig.alerts.responseTime,
+    requestsPerMinute: monitoringConfig.alerts.requestsPerMinute,
+    consecutiveErrors: monitoringConfig.alerts.consecutiveErrors
+  },
+  notificationChannels: monitoringConfig.alerts.channels.length > 0 ? monitoringConfig.alerts.channels : ['console'],
+  email: {
+    host: monitoringConfig.email.host,
+    port: monitoringConfig.email.port,
+    secure: monitoringConfig.email.secure === true || monitoringConfig.email.secure === 'true',
+    user: monitoringConfig.email.user,
+    pass: monitoringConfig.email.pass
+  }
+});
+
+const chatBackup = new ChatBackupSystem({
+  backupDir: monitoringConfig.backup.dir,
+  maxBackups: monitoringConfig.backup.maxBackups,
+  backupInterval: monitoringConfig.backup.interval,
+  compressionLevel: monitoringConfig.backup.compressionLevel,
+  includeMetadata: monitoringConfig.backup.includeMetadata !== 'false' && monitoringConfig.backup.includeMetadata !== false,
+  retentionDays: monitoringConfig.backup.retentionDays
+});
+
 const advancedLogger = new AdvancedLogger({
   logDir: './logs',
-  logLevel: 'info',
+  logLevel: process.env.LOG_LEVEL || 'info',
   format: 'json'
 });
 
-// TEMPORALMENTE DESHABILITADO
-/*
 const realtimeMetrics = new RealtimeMetrics({
-  port: 8004,
-  updateInterval: 2000,
-  enableSystemMetrics: true,
-  enableCustomMetrics: true
+  port: monitoringConfig.realtime.port,
+  updateInterval: monitoringConfig.realtime.updateInterval,
+  enableSystemMetrics: monitoringConfig.realtime.enableSystemMetrics !== 'false' && monitoringConfig.realtime.enableSystemMetrics !== false,
+  enableCustomMetrics: monitoringConfig.realtime.enableCustomMetrics !== 'false' && monitoringConfig.realtime.enableCustomMetrics !== false
 });
-*/
-const realtimeMetrics = null;
 
 const smartCache = new SmartCache({
-  maxSize: 1000,
-  maxMemory: 100 * 1024 * 1024, // 100MB
-  defaultTTL: 300000, // 5 minutos
-  policy: 'LRU'
+  maxSize: monitoringConfig.cache.maxSize,
+  maxMemory: monitoringConfig.cache.maxMemory,
+  defaultTTL: monitoringConfig.cache.defaultTTL,
+  policy: monitoringConfig.cache.policy
+});
+
+chatMetrics.on('metricsUpdate', () => {
+  try {
+    chatAlerts.processMetrics(chatMetrics.getAlertMetrics());
+  } catch (error) {
+    console.error('Error procesando métricas para alertas:', error);
+  }
+});
+
+chatAlerts.on('alert', (alert) => {
+  advancedLogger.error('Alerta del sistema de chat', { alert });
 });
 
 const ADMIN_ROLES = new Set(['admin', 'super_admin', 'editor']);
@@ -500,7 +637,7 @@ app.use((req, res, next) => {
   req.chatAlerts = chatAlerts;
   req.chatBackup = chatBackup;
   req.advancedLogger = advancedLogger;
-  // req.realtimeMetrics = realtimeMetrics; // TEMPORALMENTE DESHABILITADO
+  req.realtimeMetrics = realtimeMetrics;
   req.smartCache = smartCache;
   next();
 });
@@ -552,20 +689,23 @@ app.use(configMiddleware.injectConfig.bind(configMiddleware));
 app.use(configMiddleware.validateCriticalConfig.bind(configMiddleware));
 app.use(configMiddleware.logConfig.bind(configMiddleware));
 
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
 // Middleware de validación y seguridad
 app.use(validationMiddleware.sanitizeInput.bind(validationMiddleware));
 app.use(validationMiddleware.validatePayloadSize(10 * 1024 * 1024).bind(validationMiddleware));
 
 // Middleware de monitoreo
 app.use((req, res, next) => {
-    const startTime = Date.now();
-    
-    res.on('finish', () => {
-        const responseTime = Date.now() - startTime;
-        systemMonitor.recordAPIRequest(req.path, req.method, res.statusCode, responseTime);
-    });
-    
-    next();
+  const startTime = Date.now();
+
+  res.on('finish', () => {
+    const responseTime = Date.now() - startTime;
+    systemMonitor.recordAPIRequest(req.path, req.method, res.statusCode, responseTime);
+  });
+
+  next();
 });
 
 // Middleware de seguridad
@@ -573,9 +713,10 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      styleSrc: ["'self'", "'unsafe-inline'"],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
       scriptSrc: ["'self'"],
       imgSrc: ["'self'", "data:", "https:"],
+      fontSrc: ["'self'", 'https://fonts.gstatic.com', 'data:']
     },
   },
   hsts: {
@@ -584,44 +725,6 @@ app.use(helmet({
     preload: true
   }
 }));
-
-// Middleware de CORS más flexible y confiable
-app.use(cors({
-  origin: true, // Permitir todos los orígenes temporalmente para debugging
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: [
-    'Content-Type',
-    'Authorization',
-    'X-Requested-With',
-    'Origin',
-    'Accept'
-  ]
-}));
-
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: true, limit: '10mb' }));
-
-// Middleware de configuración unificada
-app.use(configMiddleware.injectConfig.bind(configMiddleware));
-app.use(configMiddleware.validateCriticalConfig.bind(configMiddleware));
-app.use(configMiddleware.logConfig.bind(configMiddleware));
-
-// Middleware de validación y seguridad
-app.use(validationMiddleware.sanitizeInput.bind(validationMiddleware));
-app.use(validationMiddleware.validatePayloadSize(10 * 1024 * 1024).bind(validationMiddleware));
-
-// Middleware de monitoreo
-app.use((req, res, next) => {
-    const startTime = Date.now();
-
-    res.on('finish', () => {
-        const responseTime = Date.now() - startTime;
-        systemMonitor.recordAPIRequest(req.path, req.method, res.statusCode, responseTime);
-    });
-
-    next();
-});
 
 // Middleware de logging estructurado
 app.use((req, res, next) => {
@@ -775,7 +878,7 @@ app.get('/api/monitoring/health', (req, res) => {
 // Configuración de base de datos
 let db;
 
-if (process.env.DB_TYPE === 'sqlite') {
+if (isSQLite) {
   // Configuración SQLite para desarrollo
   const sqlite = require('sqlite3').verbose();
   const path = require('path');
@@ -828,13 +931,40 @@ if (process.env.DB_TYPE === 'sqlite') {
   };
 } else {
   // Configuración PostgreSQL
+  const dbHost = resolveConfigValue('DB_HOST', 'database.host');
+  const dbPortRaw = resolveConfigValue('DB_PORT', 'database.port');
+  const dbName = resolveConfigValue('DB_NAME', 'database.name');
+  const dbUser = resolveConfigValue('DB_USER', 'database.user');
+  const dbPassword = resolveConfigValue('DB_PASSWORD', 'database.password');
+  const dbSSLRaw = resolveConfigValue('DB_SSL', 'database.ssl', false);
+
+  const missingConfig = [];
+  if (!dbHost) missingConfig.push('DB_HOST');
+  if (!dbName) missingConfig.push('DB_NAME');
+  if (!dbUser) missingConfig.push('DB_USER');
+  if (!dbPassword) missingConfig.push('DB_PASSWORD');
+
+  if (missingConfig.length > 0) {
+    console.error('❌ Configuración de PostgreSQL incompleta:', missingConfig.join(', '));
+    console.error(
+      '💡 Define las variables de entorno requeridas o establece DB_TYPE=sqlite para usar la base de datos embebida en desarrollo.'
+    );
+    process.exit(1);
+  }
+
+  const parsedPort = Number(dbPortRaw);
+  const dbPort = Number.isFinite(parsedPort) ? parsedPort : 5432;
+  const useSSL = typeof dbSSLRaw === 'string'
+    ? ['true', '1', 'yes', 'on'].includes(dbSSLRaw.trim().toLowerCase())
+    : Boolean(dbSSLRaw);
+
   const pgp = require('pg-promise')({
     capSQL: true,
     connect(client, dc, useCount) {
       try {
         const cp = client.connectionParameters;
-        if (cp && cp.user && cp.host && cp.port && cp.database) {
-          console.log('🔌 Conectando a PostgreSQL:', `${cp.user}@${cp.host}:${cp.port}/${cp.database}`);
+        if (cp && cp.host && cp.port && cp.database) {
+          console.log('🔌 Conectando a PostgreSQL:', `${cp.host}:${cp.port}/${cp.database}`);
         }
       } catch (error) {
         console.log('🔌 Conectando a PostgreSQL...');
@@ -843,25 +973,27 @@ if (process.env.DB_TYPE === 'sqlite') {
   });
 
   const cn = {
-    host: process.env.DB_HOST || 'localhost',
-    port: parseInt(process.env.DB_PORT || '5432'),
-    database: process.env.DB_NAME || 'sheily_ai_db',
-    user: process.env.DB_USER || 'sheily_ai_user',
-    password: process.env.DB_PASSWORD || 'admin123',
-    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+    host: dbHost,
+    port: dbPort,
+    database: dbName,
+    user: dbUser,
+    password: dbPassword,
+    ssl: useSSL ? { rejectUnauthorized: false } : false,
     max: 20,
     idleTimeoutMillis: 30000,
     connectionTimeoutMillis: 5000,
     // Configuración de autenticación SASL
     sasl: {
       mechanism: 'SCRAM-SHA-256',
-      username: process.env.DB_USER || 'sheily_ai_user',
-      password: process.env.DB_PASSWORD || 'admin123'
+      username: dbUser,
+      password: dbPassword
     }
   };
 
   db = pgp(cn);
 }
+
+chatBackup.setDatabase(db);
 
 const getBranchByKey = async (branchKey) => {
   if (!branchKey) {
@@ -992,9 +1124,38 @@ const initializeDatabase = async () => {
 // Inicializar base de datos al arrancar
 initializeDatabase();
 
+const fetchUserWithTokens = async (userId) => {
+  const user = await db.oneOrNone(
+    'SELECT id, username, email, full_name, role, created_at, last_login FROM users WHERE id = $1',
+    [userId]
+  );
+
+  if (!user) {
+    return null;
+  }
+
+  const tokenData = await db.oneOrNone('SELECT tokens FROM user_tokens WHERE user_id = $1', [userId]);
+
+  return {
+    ...user,
+    tokens: tokenData ? tokenData.tokens : 0
+  };
+};
+
+const sendAuthSuccess = (res, message, userData, token, status = 200) => {
+  res.status(status).json({
+    message,
+    user: userData,
+    token,
+    access_token: token,
+    token_type: 'Bearer',
+    expires_in: Math.floor(SESSION_TIMEOUT / 1000)
+  });
+};
+
 // ELIMINADO: /api/models/available - Usar /api/models/available/simple que funciona
 // Endpoint de registro de usuario
-app.post('/api/auth/register', 
+app.post('/api/auth/register',
   validationMiddleware.validate('register'),
   async (req, res) => {
   try {
@@ -1024,32 +1185,25 @@ app.post('/api/auth/register',
       await db.none('INSERT INTO user_tokens (user_id, tokens) VALUES ($1, $2)', [newUser.id, 100]);
 
     // Generar token JWT con expiración
-      const token = jwt.sign(
-      { 
-        id: newUser.id, 
-        username: newUser.username, 
-        email: newUser.email, 
+    const token = jwt.sign(
+      {
+        id: newUser.id,
+        username: newUser.username,
+        email: newUser.email,
         role: 'user',
         exp: Math.floor(Date.now() / 1000) + (SESSION_TIMEOUT / 1000)
       },
       JWT_SECRET
-      );
+    );
 
-      res.status(201).json({
-      message: 'Usuario registrado exitosamente',
-        user: {
-          ...newUser,
-          role: 'user'
-        },
-        token
-      });
+    const profile = await fetchUserWithTokens(newUser.id);
+    sendAuthSuccess(res, 'Usuario registrado exitosamente', profile, token, 201);
 
   } catch (error) {
     console.error('Register error:', error);
-    res.status(500).json({ 
-      error: 'Error interno del servidor', 
-      details: error.message,
-      stack: error.stack
+    res.status(500).json({
+      error: 'Error interno del servidor',
+      details: error.message
     });
   }
 });
@@ -1060,7 +1214,7 @@ app.post('/api/auth/login',
   async (req, res) => {
   try {
     const { username, password } = req.body;
-    console.log('🔐 Login attempt:', { username, passwordLength: password ? password.length : 0 });
+    advancedLogger.info('Intento de login', { username });
 
     // La validación de entrada ya se realizó en el middleware
 
@@ -1069,8 +1223,6 @@ app.post('/api/auth/login',
         'SELECT id, username, email, password, full_name, role, is_active FROM users WHERE username = $1 OR email = $2',
         [username, username]
       );
-
-      console.log('👤 User lookup result:', user ? { id: user.id, username: user.username, active: user.is_active } : 'NOT FOUND');
 
       if (!user) {
       return res.status(401).json({ error: 'Credenciales inválidas' });
@@ -1082,7 +1234,6 @@ app.post('/api/auth/login',
 
     // Verificar contraseña
       const isMatch = await bcrypt.compare(password, user.password);
-      console.log('🔑 Password verification:', { isMatch, hashLength: user.password.length });
 
       if (!isMatch) {
       return res.status(401).json({ error: 'Credenciales inválidas' });
@@ -1090,35 +1241,22 @@ app.post('/api/auth/login',
 
     // Generar token JWT con expiración
       const token = jwt.sign(
-      { 
-        id: user.id, 
-        username: user.username, 
-        email: user.email, 
+      {
+        id: user.id,
+        username: user.username,
+        email: user.email,
         role: user.role,
         exp: Math.floor(Date.now() / 1000) + (SESSION_TIMEOUT / 1000)
       },
       JWT_SECRET
     );
 
-    // Obtener tokens del usuario
-      const tokenData = await db.oneOrNone('SELECT tokens FROM user_tokens WHERE user_id = $1', [user.id]);
-      const userTokens = tokenData ? tokenData.tokens : 0;
-
     // Actualizar último login
     await db.none('UPDATE users SET last_login = CURRENT_TIMESTAMP WHERE id = $1', [user.id]);
 
-      res.json({
-      message: 'Login exitoso',
-        user: {
-          id: user.id,
-          username: user.username,
-          email: user.email,
-          full_name: user.full_name,
-          role: user.role,
-          tokens: userTokens
-        },
-        token
-      });
+    const profile = await fetchUserWithTokens(user.id);
+    advancedLogger.info('Login exitoso', { userId: user.id, username: user.username });
+    sendAuthSuccess(res, 'Login exitoso', profile, token);
 
   } catch (error) {
     console.error('Login error:', error);
@@ -1127,32 +1265,23 @@ app.post('/api/auth/login',
 });
 
 // Endpoint de perfil de usuario
-app.get('/api/auth/profile', authenticateToken, async (req, res) => {
+const sendUserProfile = async (req, res) => {
   try {
-    const user = await db.oneOrNone(
-      'SELECT id, username, email, full_name, role, created_at, last_login FROM users WHERE id = $1',
-      [req.user.id]
-    );
+    const user = await fetchUserWithTokens(req.user.id);
 
     if (!user) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
 
-    // Obtener tokens del usuario
-    const tokenData = await db.oneOrNone('SELECT tokens FROM user_tokens WHERE user_id = $1', [req.user.id]);
-    const userTokens = tokenData ? tokenData.tokens : 0;
-
-    res.json({
-      user: {
-        ...user,
-        tokens: userTokens
-      }
-    });
+    res.json({ user });
   } catch (error) {
     console.error('Profile error:', error);
-    res.status(500).json({ error: 'Error de base de datos' });
+    res.status(500).json({ error: 'Error interno del servidor' });
   }
-});
+};
+
+app.get('/api/auth/profile', authenticateToken, sendUserProfile);
+app.get('/api/auth/me', authenticateToken, sendUserProfile);
 
 // Endpoint de actualización de perfil
 app.put('/api/auth/profile', authenticateToken, async (req, res) => {
@@ -1897,7 +2026,7 @@ app.post('/api/chat/llama/reload', async (req, res) => {
 // ===== ENDPOINT PRINCIPAL DE CHAT PARA DASHBOARD =====
 
 // Endpoint principal /chat compatible con dashboard - USA LLAMA 3.2 INSTRUCT Q4
-app.post('/chat', async (req, res) => {
+const handleChatRequest = async (req, res) => {
   try {
     const { message, user_id, branch, session_id } = req.body;
 
@@ -1997,7 +2126,10 @@ app.post('/chat', async (req, res) => {
       timestamp: new Date().toISOString()
     });
   }
-});
+};
+
+app.post('/chat', handleChatRequest);
+app.post('/api/chat', handleChatRequest);
 
 // ===== APIS FALTANTES IMPLEMENTADAS POR GATEWAY MAESTRO =====
 
@@ -2871,7 +3003,7 @@ app.get('/api/branches/:branchKey/exercises', authenticateToken, async (req, res
     }
 
     const filters = ['e.branch_id = $1'];
-    const values = [branchKey];
+    const values = [branch.id];
     let placeholderIndex = 2;
 
     const scope = typeof req.query.scope === 'string' ? req.query.scope.trim().toLowerCase() : '';
